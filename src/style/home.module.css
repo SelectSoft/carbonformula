@@ -1,0 +1,23 @@
+.mainBody{
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.innerDiv{
+    /* border: 15px solid #85B91C; */
+    width: auto;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    text-justify: auto;
+    border-radius: 2%;
+}
+.organization{
+    height: 300px;
+    width: 300px;
+    color: #85B91C;
+}

@@ -19,11 +19,8 @@ const Construction = (props) => {
   const [onsite, setOnsite] = useState(false);
   const [waterdisposal, setWaterdisposal] = useState(false);
   const [watersupply, setWatersupply] = useState(false);
-  const [title, setTitle] = useState(false);
-  const [titlee, setTitlee] = useState(false);
 
   const handleMenuItems = (link) => {
-    console.log(link);
     if (link === "electricityusage") {
       setBioenergy(false);
       setElectricityusage(true);
@@ -77,7 +74,6 @@ const Construction = (props) => {
 
       setWaterdisposal(false);
       setWatersupply(false);
-
       <center>
         <h1>Page Not Found</h1>
       </center>;
@@ -87,6 +83,106 @@ const Construction = (props) => {
     const char = true;
     return char;
   };
+  // Handle Electricity usage
+  const [usage, setUsage] = useState("")
+  const [dropDown, setDropDown] = useState("")
+  const [checkBoxValue, setCheckBoxValue] = useState("notchecked")
+  const handleDropdown = (eventKey) => {
+    setDropDown(eventKey)
+  }
+  const handleInput = (event) => {
+    if (event.target.checked) {
+      setCheckBoxValue("checked")
+    }
+    else {
+      setCheckBoxValue("notchecked")
+    }
+  }
+  ////////////////////////////////////////////////////////
+
+  // On Site Fuel Combustion
+  const [gaseous, setGaseous] = useState("");
+  const [CNG, setCNG] = useState("");
+  const [KWH, setKWH] = useState("");
+  const [onSiteUsage, setOnSiteUsage] = useState("");
+  const [onsiteCheckBoxValue, setOnsiteCheckBoxValue] = useState("");
+
+  const handleGaseous = (eventKey) => {
+    setGaseous(eventKey)
+  }
+  const handleCNG = (eventKey) => {
+    setCNG(eventKey)
+  }
+  const handleKWH = (eventKey) => {
+    setKWH(eventKey)
+  }
+  const handleOnsiteInput = (event) => {
+    if (event.target.checked) {
+      setOnsiteCheckBoxValue("checked")
+    }
+    else {
+      setOnsiteCheckBoxValue("notchecked")
+    }
+  }
+  /////////////////////////////////////////////////
+
+  // Bio energy usage
+  const [biofuel, setBioFusel] = useState("");
+  const [bioethanol, setBioethanol] = useState("");
+  const [liter, setLiter] = useState("");
+  const [bioEnergyUsage, setBioEnergyUsage] = useState("");
+  const [bioEnergyCheckBoxValue, setBioEnergyCheckBoxValue] = useState("");
+
+  const handleBiofuel = (eventKey) => {
+    setBioFusel(eventKey)
+  }
+  const handleBiothanol = (eventKey) => {
+    setBioethanol(eventKey)
+  }
+  const handleLiter = (eventKey) => {
+    setLiter(eventKey)
+  }
+  const handleBioEnergyInput = (event) => {
+    if (event.target.checked) {
+      setBioEnergyCheckBoxValue("checked")
+    }
+    else {
+      setBioEnergyCheckBoxValue("notchecked")
+    }
+  }
+  /////////////////////////////////////////////////
+
+  // FormHandler for all 
+  const formHandler = () => {
+    if (electricityusage) {
+      var data = {
+        "usage": usage,
+        "checkBoxValue": checkBoxValue,
+        "dropDown": dropDown
+      }
+      console.log(data);
+    }
+    else if (onsite) {
+      var data = {
+        "gaseous": gaseous,
+        "CNG": CNG,
+        "kwh": KWH,
+        "onSiteUsage": onSiteUsage,
+        "onsiteCheckBoxValue": onsiteCheckBoxValue
+      }
+      console.log(data);
+    }
+    else if (bionergy) {
+      var data = {
+        "biofuel": biofuel,
+        "bioethanol": bioethanol,
+        "liter": liter,
+        "bioEnergyUsage": bioEnergyUsage,
+        "bioEnergyCheckBoxValue": bioEnergyCheckBoxValue
+      }
+      console.log(data);
+    }
+  }
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -130,13 +226,30 @@ const Construction = (props) => {
               <App handleMenuItems={handleMenuItems} />
             </div>
             {electricityusage ? (
-              <Electricity />
+              <Electricity
+                setUsage={setUsage}
+                handleDropdown={handleDropdown}
+                checkBoxValue={checkBoxValue}
+                handleInput={handleInput} />
             ) : bionergy ? (
-              <Bioenergy />
+              <Bioenergy
+                handleBiofuel={handleBiofuel}
+                handleBiothanol={handleBiothanol}
+                setBioEnergyUsage={setBioEnergyUsage}
+                handleLiter={handleLiter}
+                bioEnergyCheckBoxValue={bioEnergyCheckBoxValue}
+                handleBioEnergyInput={handleBioEnergyInput} />
             ) : materialuse ? (
-              <MaterialUse />
+              <MaterialUse
+              />
             ) : onsite ? (
-              <OnSite />
+              <OnSite
+                handleGaseous={handleGaseous}
+                handleCNG={handleCNG}
+                setOnSiteUsage={setOnSiteUsage}
+                handleKWH={handleKWH}
+                onsiteCheckBoxValue={onsiteCheckBoxValue}
+                handleOnsiteInput={handleOnsiteInput} />
             ) : waterdisposal ? (
               <WaterDisposal />
             ) : watersupply ? (
@@ -147,6 +260,7 @@ const Construction = (props) => {
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

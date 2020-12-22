@@ -24,13 +24,13 @@ const Bioenergy = () => {
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a href={{}}>HTML</a>
+                <a >HTML</a>
               </li>
               <li>
-                <a href={{}}>CSS</a>
+                <a >CSS</a>
               </li>
               <li>
-                <a href={{}}>JavaScript</a>
+                <a >JavaScript</a>
               </li>
             </ul>
           </div>
@@ -47,13 +47,13 @@ const Bioenergy = () => {
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a href={{}}>HTML</a>
+                <a >HTML</a>
               </li>
               <li>
-                <a href={{}}>CSS</a>
+                <a >CSS</a>
               </li>
               <li>
-                <a href={{}}>JavaScript</a>
+                <a >JavaScript</a>
               </li>
             </ul>
           </div>
@@ -81,13 +81,13 @@ const Bioenergy = () => {
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a href={{}}>HTML</a>
+                <a >HTML</a>
               </li>
               <li>
-                <a href={{}}>CSS</a>
+                <a >CSS</a>
               </li>
               <li>
-                <a href={{}}>JavaScript</a>
+                <a >JavaScript</a>
               </li>
             </ul>
           </div>

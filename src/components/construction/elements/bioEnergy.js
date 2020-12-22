@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Dropdown from 'react-bootstrap/Dropdown'
 
-const Bioenergy = () => {
+const Bioenergy = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -12,50 +13,31 @@ const Bioenergy = () => {
             <p style={{ fontSize: "25px" }}>Type of fuel: </p>
           </div>
 
-          <div class="dropdown col-md-2" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Bio-Fuel
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
-          </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleBiofuel}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Bio-Fuel
+                  </Dropdown.Toggle>
 
-          <div class="dropdown col-md-3">
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Bioethanol
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleBiothanol}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Bioethanol
+                  </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -66,30 +48,24 @@ const Bioenergy = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              onChange={(event) => props.setBioEnergyUsage(event.target.value)}
+              placeholder="Enter usage"
+              style={{ width: "100%", height: "35px" }} />
           </div>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Liter
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleLiter}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Liter
+                  </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
 
@@ -99,7 +75,9 @@ const Bioenergy = () => {
         </div>
         <div class="col-md-4" style={{ padding: "0px" }}>
           <br />
-          <input type="checkbox" style={{ width: "30px", height: "30px" }} />
+          <input type="checkbox"
+            value={props.bioEnergyCheckBoxValue} onClick={props.handleBioEnergyInput}
+            style={{ width: "30px", height: "30px" }} />
         </div>
         <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another fuel

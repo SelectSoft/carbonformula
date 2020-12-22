@@ -1,10 +1,32 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import classes from "../../style/login.module.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Font, { Text } from "react-font";
 import Logo from "../home/logo";
+import Dropdown from 'react-bootstrap/Dropdown'
 import { Link } from "react-router-dom";
 const Login = (props) => {
+  const [email, setEmail] = useState("")
+  const [code, setCode] = useState("")
+  const [dropDown, setDropDown] = useState("")
+  const handleForm = () => {
+    var data = {
+      "email": email,
+      "code": code,
+      "dropDown": dropDown
+    }
+    console.log(data);
+    props.toogleHandler("/activity")
+  }
+  const handleDropdown = (eventKey) => {
+    setDropDown(eventKey)
+  }
+  const codeHandler = (event) => {
+    setCode(event.target.value)
+  }
+  const emailHandler = (event) => {
+    setEmail(event.target.value)
+  }
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -46,8 +68,10 @@ const Login = (props) => {
               <div className="col-md-8">
                 <br />
                 <input
-                  class="form-control form-control-lg"
-                  type="text"
+                  // class="form-control form-control-lg"
+                  type="email"
+                  value={email}
+                  onChange={emailHandler}
                   placeholder="Enter your email"
                   style={{ width: "100%" }}
                 />
@@ -63,6 +87,8 @@ const Login = (props) => {
                 <input
                   class="form-control form-control-lg"
                   type="text"
+                  onChange={codeHandler}
+                  value={code}
                   placeholder="Enter orginizational code"
                   style={{ width: "100%" }}
                 />
@@ -78,37 +104,27 @@ const Login = (props) => {
                     What period of time are you calculating emmission over?
                   </h3>
                 </div>
+                <div class="dropdown col-md-3" style={{ marginTop: "28px" }}>
+                  <Dropdown onSelect={handleDropdown}>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      Dropdown Example
+                  </Dropdown.Toggle>
 
-                <div class="dropdown col-md-3">
-                  <br />
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    data-toggle="dropdown"
-                    style={{ border: "1px solid black" }}
-                  >
-                    Dropdown Example
-                    {/* <span class="caret"></span> */}
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a href={{}}>HTML</a>
-                    </li>
-                    <li>
-                      <a href={{}}>CSS</a>
-                    </li>
-                    <li>
-                      <a href={{}}>JavaScript</a>
-                    </li>
-                  </ul>
+                    <Dropdown.Menu>
+                      <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                      <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                      <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </div>
               </div>
             </div>
             <div className="container" style={{ width: "100%" }}>
               <center>
-                <Link onClick={() => props.toogleHandler("/activity")}>
+                <Link>
                   <button
                     className="btn btn-lg"
+                    onClick={handleForm}
                     style={{ backgroundColor: "#85B91C", color: "white" }}
                   >
                     Get Started
@@ -118,8 +134,8 @@ const Login = (props) => {
             </div>
           </div>
         </Font>
-      </div>
-    </React.Fragment>
+      </div >
+    </React.Fragment >
   );
 };
 

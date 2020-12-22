@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-const Onsite = () => {
+import Dropdown from 'react-bootstrap/Dropdown'
+const Onsite = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -11,50 +12,31 @@ const Onsite = () => {
             <p style={{ fontSize: "25px" }}>Type of fuel: </p>
           </div>
 
-          <div class="dropdown col-md-2" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Gaseous
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
-          </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleGaseous}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Gaseous
+                  </Dropdown.Toggle>
 
-          <div class="dropdown col-md-3">
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              CNG
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleCNG}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                CNG
+                  </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -65,31 +47,23 @@ const Onsite = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              onChange={(event) => props.setOnSiteUsage(event.target.value)}
+              placeholder="Enter usage"
+              style={{ width: "100%", height: "35px" }} />
           </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleKWH}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                KWH(NGV)
+                  </Dropdown.Toggle>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              KWH(NGV)
-              {/* <span class="caret"></span> */}
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href={{}}>HTML</a>
-              </li>
-              <li>
-                <a href={{}}>CSS</a>
-              </li>
-              <li>
-                <a href={{}}>JavaScript</a>
-              </li>
-            </ul>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
 
@@ -99,7 +73,9 @@ const Onsite = () => {
         </div>
         <div class="col-md-4" style={{ padding: "0px" }}>
           <br />
-          <input type="checkbox" style={{ width: "30px", height: "30px" }} />
+          <input type="checkbox"
+            value={props.onsiteCheckBoxValue} onClick={props.handleOnsiteInput}
+            style={{ width: "30px", height: "30px" }} />
         </div>
         <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another

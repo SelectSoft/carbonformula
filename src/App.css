@@ -7,6 +7,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.menu-wrapper--inner{
+  margin-left: -106;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

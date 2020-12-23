@@ -5,9 +5,10 @@ import Logo from "../../home/logo";
 import Font, { Text } from "react-font";
 import classes from "../../../style/building.module.css";
 import Hotel from "./elements/hotel";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Hotelstay = (props) => {
-  const [hotelstay, setHotelstay] = useState(false);
+  const [hotelstay, setHotelstay] = useState(true);
   const handleMenuItems = (link) => {
     console.log(link);
     if (link === "hotelstay") {
@@ -24,6 +25,36 @@ const Hotelstay = (props) => {
     const char = true;
     return char;
   };
+  ///////// handle hotel stay
+
+  const [hoteStayCountry, setHotelStay] = useState("");
+  const [hoteStayNoOfNights, setHotelStayNoOfNights] = useState("");
+  const [hoteStayCheck, setHotelStayCheck] = useState("notchecked");
+
+  const handleHoteStayCountry = (eventKey) => {
+    setHotelStay(eventKey);
+  };
+  const handleHoteStayNoOfNights = (eventKey) => {
+    setHotelStayNoOfNights(eventKey);
+  };
+  const handleHoteStayCheck = (event) => {
+    if (event.target.checked) {
+      setHotelStayCheck("checked");
+    } else {
+      setHotelStayCheck("notchecked");
+    }
+  };
+  const formHandler = () => {
+    if (hotelstay) {
+      var data = {
+        hoteStayCountry: hoteStayCountry,
+        hoteStayNoOfNights: hoteStayNoOfNights,
+        hoteStayCheck: hoteStayCheck,
+      };
+      console.log(data);
+    }
+  };
+  //////////////////////
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -43,7 +74,11 @@ const Hotelstay = (props) => {
               </Link>
             </button>
             <p
-              style={{ fontSize: "30px", marginLeft: "5px", marginTop: "12px" }}
+              style={{
+                fontSize: "30px",
+                marginLeft: "5px",
+                marginTop: "12px",
+              }}
             >
               Previous Page
             </p>
@@ -62,12 +97,17 @@ const Hotelstay = (props) => {
             {/* <div className={classes.div1}>
               <App handleMenuItems={handleMenuItems} />
             </div> */}
-            <Hotel />
+            <Hotel
+              handleHoteStayCountry={handleHoteStayCountry}
+              handleHoteStayNoOfNights={handleHoteStayNoOfNights}
+              handleHoteStayCheck={handleHoteStayCheck}
+            />
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

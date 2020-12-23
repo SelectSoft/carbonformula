@@ -68,6 +68,210 @@ const Construction = (props) => {
     const char = true;
     return char;
   };
+  ///////// handle hotel stay
+
+  // const [hoteStayCountry, setHotelStay] = useState("");
+  // const [hoteStayNoOfNights, setHotelStayNoOfNights] = useState("");
+  // const [hoteStayCheck, setHotelStayCheck] = useState("notchecked");
+
+  // const handleHoteStayCountry = (eventKey) => {
+  //   setHotelStay(eventKey);
+  // };
+  // const handleHoteStayNoOfNights = (eventKey) => {
+  //   setHotelStayNoOfNights(eventKey);
+  // };
+  // const handleHoteStayCheck = (event) => {
+  //   if (event.target.checked) {
+  //     setHotelStayCheck("checked");
+  //   } else {
+  //     setHotelStayCheck("notchecked");
+  //   }
+  // };
+
+  //////////////////////
+
+  ///////////////handle Air travel
+
+  const [
+    airPlaneTravelDepartureAirport,
+    setAirPlaneTravelDepartureAirport,
+  ] = useState("");
+  const [
+    airPlaneTravelArivalAirport,
+    setAirPlaneTravelArivalAirport,
+  ] = useState("");
+  const [airPlaneTravelVia, setAirPlaneTravelVia] = useState("");
+  const [airPlaneTravelClass, setAirPlaneTravelClass] = useState("");
+  const [airPlaneTravelPassenger, setAirPlaneTravelPassenger] = useState("");
+  const [airPlaneTravelReturn, setAirPlaneTravelReturn] = useState(
+    "notchecked"
+  );
+  const [airPlaneTravelSingle, setAirPlaneTravelSingle] = useState(
+    "notchecked"
+  );
+
+  const handleAirPlaneTravelDepartureAirport = (eventKey) => {
+    setAirPlaneTravelDepartureAirport(eventKey);
+  };
+  const handleAirPlaneTravelArivalAirport = (eventKey) => {
+    setAirPlaneTravelArivalAirport(eventKey);
+  };
+  const handleAirPlaneTravelVia = (eventKey) => {
+    setAirPlaneTravelVia(eventKey);
+  };
+  const handleAirPlaneTravelClass = (eventKey) => {
+    setAirPlaneTravelClass(eventKey);
+  };
+  const handleAirPlaneTravelPassenger = (eventKey) => {
+    setAirPlaneTravelPassenger(eventKey);
+  };
+  const handleAirPlaneTravelReturn = (event) => {
+    if (event.target.checked) {
+      setAirPlaneTravelReturn("checked");
+    } else {
+      setAirPlaneTravelReturn("notchecked");
+    }
+  };
+  const handleAirPlaneTravelSingle = (event) => {
+    if (event.target.checked) {
+      setAirPlaneTravelSingle("checked");
+    } else {
+      setAirPlaneTravelSingle("notchecked");
+    }
+  };
+
+  //////////////////////
+  ////////////// handle car travel
+
+  const [carTravelVehicl, setCarTravel] = useState("");
+  const [carTravelType, setCarTravelType] = useState("");
+  const [carTravelDistance, setCarTravelDistance] = useState("");
+  const [carTravelKm, setCarTravelKm] = useState("");
+
+  const handleCarTravelVehicl = (eventKey) => {
+    setCarTravel(eventKey);
+  };
+  const handleCarTravelType = (eventKey) => {
+    setCarTravelType(eventKey);
+  };
+  const handleCarTravelDistance = (eventKey) => {
+    setCarTravelDistance(eventKey);
+  };
+  const handleCarTravelKm = (eventKey) => {
+    setCarTravelKm(eventKey);
+  };
+
+  /////////////////////////
+
+  ////////////// handle electric car
+
+  const [electricCarVehicl, setElectricCarVehicl] = useState("");
+  const [electricCarType, setElectricCarType] = useState("");
+  const [electricCarDistance, setElectricCarDistance] = useState("");
+  const [electricCarKm, setElectricCarKm] = useState("");
+
+  const handleElectricCarVehicl = (eventKey) => {
+    setElectricCarVehicl(eventKey);
+  };
+  const handleElectricCarType = (eventKey) => {
+    setElectricCarType(eventKey);
+  };
+  const handleElectricCarDistance = (eventKey) => {
+    setElectricCarDistance(eventKey);
+  };
+  const handleElectricCarKm = (eventKey) => {
+    setElectricCarKm(eventKey);
+  };
+  //////////// handle tranSPort and travel Seas
+
+  const [seaPassangerType, setSeaPassangerType] = useState("");
+  const [seaDistance, setSeaDistance] = useState("");
+  const [seaKm, setSeaKm] = useState("");
+
+  const handleSeaPassangerType = (eventKey) => {
+    setSeaPassangerType(eventKey);
+  };
+  const handleSeDistance = (eventKey) => {
+    setSeaDistance(eventKey);
+  };
+  const handleSeaKm = (eventKey) => {
+    setSeaKm(eventKey);
+  };
+
+  ///////////////////
+
+  //////////// handle tranSPort and travel Seas
+
+  const [calculatefuelGaseous, setCalculatefuelGaseous] = useState("");
+  const [calculatefuelCNG, setCalculatefuelCNG] = useState("");
+  const [calculatefuelQuantity, setCalculatefuelQuantity] = useState("");
+  const [calculatefuelTonnes, setCalculatefuelTonnes] = useState("");
+
+  const handleCalculatefuelGaseous = (eventKey) => {
+    setCalculatefuelGaseous(eventKey);
+  };
+  const handleCalculatefuelCNG = (eventKey) => {
+    setCalculatefuelCNG(eventKey);
+  };
+  const handleCalculatefuelQuantity = (eventKey) => {
+    setCalculatefuelQuantity(eventKey);
+  };
+  const handleCalculatefuelTonnes = (eventKey) => {
+    setCalculatefuelTonnes(eventKey);
+  };
+
+  ///////////////////
+
+  /////////////////////////
+
+  ////// Form Handler
+  const formHandler = () => {
+    if (air) {
+      var data = {
+        airPlaneTravelDepartureAirport: airPlaneTravelDepartureAirport,
+        airPlaneTravelArivalAirport: airPlaneTravelArivalAirport,
+        airPlaneTravelVia: airPlaneTravelVia,
+        airPlaneTravelClass: airPlaneTravelClass,
+        airPlaneTravelPassenger: airPlaneTravelPassenger,
+        airPlaneTravelReturn: airPlaneTravelReturn,
+        airPlaneTravelSingle: airPlaneTravelSingle,
+      };
+      console.log(data);
+    } else if (land) {
+      var data = {
+        carTravelVehicl: carTravelVehicl,
+        carTravelType: carTravelType,
+        carTravelDistance: carTravelDistance,
+        carTravelKm: carTravelKm,
+      };
+      console.log(data);
+    } else if (electriccar) {
+      var data = {
+        electricCarVehicl: electricCarVehicl,
+        electricCarType: electricCarType,
+        electricCarDistance: electricCarDistance,
+        electricCarKm: electricCarKm,
+      };
+      console.log(data);
+    } else if (ferry) {
+      var data = {
+        seaPassangerType: seaPassangerType,
+        seaDistance: seaDistance,
+        seaKm: seaKm,
+      };
+      console.log(data);
+    } else if (calculatefuel) {
+      var data = {
+        calculatefuelGaseous: calculatefuelGaseous,
+        calculatefuelCNG: calculatefuelCNG,
+        calculatefuelQuantity: calculatefuelQuantity,
+        calculatefuelTonnes: calculatefuelTonnes,
+      };
+      console.log(data);
+    }
+  };
+  //////////////////////
+
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -107,21 +311,53 @@ const Construction = (props) => {
               <App handleMenuItems={handleMenuItems} />
             </div>
             {air ? (
-              <Air />
+              <Air
+                handleAirPlaneTravelDepartureAirport={
+                  handleAirPlaneTravelDepartureAirport
+                }
+                handleAirPlaneTravelArivalAirport={
+                  handleAirPlaneTravelArivalAirport
+                }
+                handleAirPlaneTravelVia={handleAirPlaneTravelVia}
+                handleAirPlaneTravelClass={handleAirPlaneTravelClass}
+                handleAirPlaneTravelPassenger={handleAirPlaneTravelPassenger}
+                handleAirPlaneTravelReturn={handleAirPlaneTravelReturn}
+                handleAirPlaneTravelSingle={handleAirPlaneTravelSingle}
+              />
             ) : land ? (
-              <Land />
+              <Land
+                handleCarTravelVehicl={handleCarTravelVehicl}
+                handleCarTravelType={handleCarTravelType}
+                handleCarTravelDistance={handleCarTravelDistance}
+                handleCarTravelKm={handleCarTravelKm}
+              />
             ) : electriccar ? (
-              <Electriccar />
+              <Electriccar
+                handleElectricCarVehicl={handleElectricCarVehicl}
+                handleElectricCarType={handleElectricCarType}
+                handleElectricCarDistance={handleElectricCarDistance}
+                handleElectricCarKm={handleElectricCarKm}
+              />
             ) : calculatefuel ? (
-              <Calculatefuel />
-            ) : Ferry ? (
-              <Ferry />
+              <Calculatefuel
+                handleCalculatefuelGaseous={handleCalculatefuelGaseous}
+                handleCalculatefuelCNG={handleCalculatefuelCNG}
+                handleCalculatefuelQuantity={handleCalculatefuelQuantity}
+                handleCalculatefuelTonnes={handleCalculatefuelTonnes}
+              />
+            ) : ferry ? (
+              <Ferry
+                handleSeaPassangerType={handleSeaPassangerType}
+                handleSeDistance={handleSeDistance}
+                handleSeaKm={handleSeaKm}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

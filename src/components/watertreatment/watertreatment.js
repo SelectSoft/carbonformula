@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+
 import classes from "../../style/fuel.module.css";
-const WaterTreatment = () => {
+const WaterTreatment = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -15,31 +17,23 @@ const WaterTreatment = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) => props.handleWaterTreated(event.target.value)}
+            />
           </div>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              cubic meter
-              {/* <span class="caret"></span> */}
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleWaterTreatmentCubicMeter}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Cubic Meter
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
           <div className="col-md-3">
@@ -49,7 +43,12 @@ const WaterTreatment = () => {
 
           <div className="col-md-3">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleWaterSupplyCarbonEmitted(event.target.value)
+              }
+            />
           </div>
 
           <div class="dropdown col-md-3">

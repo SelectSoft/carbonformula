@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-const Onsite = () => {
+import Dropdown from "react-bootstrap/Dropdown";
+
+const Fuel = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -10,8 +12,20 @@ const Onsite = () => {
             <br />
             <p style={{ fontSize: "25px" }}>Type of fuel: </p>
           </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleElectricityGaseous}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Gaseous
+              </Dropdown.Toggle>
 
-          <div class="dropdown col-md-2" style={{ width: "100%" }}>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          {/* <div class="dropdown col-md-2" style={{ width: "100%" }}>
             <br />
             <button
               class="btn dropdown-toggle"
@@ -32,9 +46,21 @@ const Onsite = () => {
                 <a >JavaScript</a>
               </li>
             </ul>
-          </div>
+          </div> */}
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleElectricityCNG}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                CNG
+              </Dropdown.Toggle>
 
-          <div class="dropdown col-md-3">
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          {/* <div class="dropdown col-md-3">
             <br />
             <button
               class="btn dropdown-toggle"
@@ -55,7 +81,7 @@ const Onsite = () => {
                 <a >JavaScript</a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="row">
           <div className="col-md-3">
@@ -65,10 +91,27 @@ const Onsite = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleElectricityFuelUsage(event.target.value)
+              }
+            />
           </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleElectricityFuelUsageKWH}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                KWH(NCV)
+              </Dropdown.Toggle>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          {/* <div class="dropdown col-md-7" style={{ width: "100%" }}>
             <br />
             <button
               class="btn dropdown-toggle"
@@ -77,7 +120,6 @@ const Onsite = () => {
               style={{ border: "1px solid black" }}
             >
               KWH(NGV)
-              {/* <span class="caret"></span> */}
             </button>
             <ul class="dropdown-menu">
               <li>
@@ -90,7 +132,7 @@ const Onsite = () => {
                 <a >JavaScript</a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <button style={{ float: "right" }} class="btn btn-danger btn-md">
@@ -101,4 +143,4 @@ const Onsite = () => {
   );
 };
 
-export default Onsite;
+export default Fuel;

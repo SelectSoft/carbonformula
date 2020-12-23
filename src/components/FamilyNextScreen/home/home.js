@@ -55,6 +55,111 @@ const Home = (props) => {
     const char = true;
     return char;
   };
+  //Handle Business opertunities electricity usage
+
+  const [electricityUsage, setElectricityUsage] = useState("");
+  const [electricityKWH, setElectricityKWH] = useState("");
+  const [electricityUsageCheckBox, setElectricityUsageCheckBox] = useState(
+    "notchecked"
+  );
+
+  const handleElectricityUsage = (eventKey) => {
+    setElectricityUsage(eventKey);
+  };
+  const handleElectricityKWH = (eventKey) => {
+    setElectricityKWH(eventKey);
+  };
+
+  //////////////////////
+  //Handle Business opertunities Fuel usage
+
+  const [electricityGaseous, setElectricityGaseous] = useState("");
+  const [electricityCNG, setElectricityCNG] = useState("");
+  const [electricityFuelUsage, setElectricityFuelUsage] = useState("");
+  const [electricityFuelUsageKWH, setElectricityFuelUsageKWH] = useState("");
+  const [electricityFuelUsageCheck, setElectricityFuelUsageCheck] = useState(
+    "notchecked"
+  );
+
+  const handleElectricityGaseous = (eventKey) => {
+    setElectricityGaseous(eventKey);
+  };
+  const handleElectricityCNG = (eventKey) => {
+    setElectricityCNG(eventKey);
+  };
+  const handleElectricityFuelUsage = (eventKey) => {
+    setElectricityFuelUsage(eventKey);
+  };
+  const handleElectricityFuelUsageKWH = (eventKey) => {
+    setElectricityFuelUsageKWH(eventKey);
+  };
+
+  //////////////////////
+  //Handle Business opertunities Bio-energy usage
+
+  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("");
+  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("");
+  const [bioEnergyFuelUsage, setBioEnergyFuelUsage] = useState("");
+  const [bioEnergyLiter, setBioEnergyLiter] = useState("");
+  const [bioEnergyCheck, setBioEnergyCheck] = useState("notchecked");
+
+  const handleBioEnergyBioFuel = (eventKey) => {
+    setBioEnergyBioFuel(eventKey);
+  };
+  const handleBioEnergyBioethanol = (eventKey) => {
+    setBioEnergyBioethanol(eventKey);
+  };
+  const handleBioEnergyFuelUsage = (eventKey) => {
+    setBioEnergyFuelUsage(eventKey);
+  };
+  const handleBioEnergyLiter = (eventKey) => {
+    setBioEnergyLiter(eventKey);
+  };
+
+  ///// handle water supply
+
+  const [waterSupplyUsage, setWaterSupplyUsage] = useState("");
+  const [waterSupplyCubicMeters, setWaterSupplyCubicMeters] = useState("");
+
+  const handleWaterSupplyUsage = (eventKey) => {
+    setWaterSupplyUsage(eventKey);
+  };
+
+  const handleWaterSupplyCubicMeters = (eventKey) => {
+    setWaterSupplyCubicMeters(eventKey);
+  };
+  /////////////////////////
+  const formHandler = () => {
+    if (electricityusage) {
+      var data = {
+        electricityUsage: electricityUsage,
+        electricityKWH: electricityKWH,
+      };
+      console.log(data);
+    } else if (fuelusage) {
+      var data = {
+        electricityGaseous: electricityGaseous,
+        electricityCNG: electricityCNG,
+        electricityFuelUsage: electricityFuelUsage,
+        electricityFuelUsageKWH: electricityFuelUsageKWH,
+      };
+      console.log(data);
+    } else if (bioenergy) {
+      var data = {
+        bioEnergyBioFuel: bioEnergyBioFuel,
+        bioEnergyBioethanol: bioEnergyBioethanol,
+        bioEnergyFuelUsage: bioEnergyFuelUsage,
+        bioEnergyLiter: bioEnergyLiter,
+      };
+      console.log(data);
+    } else if (watersupply) {
+      var data = {
+        waterSupplyUsage: waterSupplyUsage,
+        waterSupplyCubicMeters: waterSupplyCubicMeters,
+      };
+      console.log(data);
+    }
+  };
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -93,20 +198,37 @@ const Home = (props) => {
             <div className={classes.div1}>
               <App handleMenuItems={handleMenuItems} />
             </div>
-            {fuelusage ? (
-              <Fuelusage />
-            ) : electricityusage ? (
-              <Electricityusage />
+            {electricityusage ? (
+              <Electricityusage
+                handleElectricityKWH={handleElectricityKWH}
+                handleElectricityUsage={handleElectricityUsage}
+              />
+            ) : fuelusage ? (
+              <Fuelusage
+                handleElectricityGaseous={handleElectricityGaseous}
+                handleElectricityCNG={handleElectricityCNG}
+                handleElectricityFuelUsage={handleElectricityFuelUsage}
+                handleElectricityFuelUsageKWH={handleElectricityFuelUsageKWH}
+              />
             ) : bioenergy ? (
-              <Bioenergy />
+              <Bioenergy
+                handleBioEnergyBioFuel={handleBioEnergyBioFuel}
+                handleBioEnergyBioethanol={handleBioEnergyBioethanol}
+                handleBioEnergyFuelUsage={handleBioEnergyFuelUsage}
+                handleBioEnergyLiter={handleBioEnergyLiter}
+              />
             ) : watersupply ? (
-              <Watersupply />
+              <Watersupply
+                handleWaterSupplyUsage={handleWaterSupplyUsage}
+                handleWaterSupplyCubicMeters={handleWaterSupplyCubicMeters}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

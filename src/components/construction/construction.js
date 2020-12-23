@@ -84,20 +84,19 @@ const Construction = (props) => {
     return char;
   };
   // Handle Electricity usage
-  const [usage, setUsage] = useState("")
-  const [dropDown, setDropDown] = useState("")
-  const [checkBoxValue, setCheckBoxValue] = useState("notchecked")
+  const [usage, setUsage] = useState("");
+  const [dropDown, setDropDown] = useState("");
+  const [checkBoxValue, setCheckBoxValue] = useState("notchecked");
   const handleDropdown = (eventKey) => {
-    setDropDown(eventKey)
-  }
+    setDropDown(eventKey);
+  };
   const handleInput = (event) => {
     if (event.target.checked) {
-      setCheckBoxValue("checked")
+      setCheckBoxValue("checked");
+    } else {
+      setCheckBoxValue("notchecked");
     }
-    else {
-      setCheckBoxValue("notchecked")
-    }
-  }
+  };
   ////////////////////////////////////////////////////////
 
   // On Site Fuel Combustion
@@ -108,22 +107,21 @@ const Construction = (props) => {
   const [onsiteCheckBoxValue, setOnsiteCheckBoxValue] = useState("");
 
   const handleGaseous = (eventKey) => {
-    setGaseous(eventKey)
-  }
+    setGaseous(eventKey);
+  };
   const handleCNG = (eventKey) => {
-    setCNG(eventKey)
-  }
+    setCNG(eventKey);
+  };
   const handleKWH = (eventKey) => {
-    setKWH(eventKey)
-  }
+    setKWH(eventKey);
+  };
   const handleOnsiteInput = (event) => {
     if (event.target.checked) {
-      setOnsiteCheckBoxValue("checked")
+      setOnsiteCheckBoxValue("checked");
+    } else {
+      setOnsiteCheckBoxValue("notchecked");
     }
-    else {
-      setOnsiteCheckBoxValue("notchecked")
-    }
-  }
+  };
   /////////////////////////////////////////////////
 
   // Bio energy usage
@@ -134,65 +132,144 @@ const Construction = (props) => {
   const [bioEnergyCheckBoxValue, setBioEnergyCheckBoxValue] = useState("");
 
   const handleBiofuel = (eventKey) => {
-    setBioFusel(eventKey)
-  }
+    setBioFusel(eventKey);
+  };
   const handleBiothanol = (eventKey) => {
-    setBioethanol(eventKey)
-  }
+    setBioethanol(eventKey);
+  };
   const handleLiter = (eventKey) => {
-    setLiter(eventKey)
-  }
+    setLiter(eventKey);
+  };
   const handleBioEnergyInput = (event) => {
     if (event.target.checked) {
-      setBioEnergyCheckBoxValue("checked")
+      setBioEnergyCheckBoxValue("checked");
+    } else {
+      setBioEnergyCheckBoxValue("notchecked");
     }
-    else {
-      setBioEnergyCheckBoxValue("notchecked")
-    }
-  }
+  };
   /////////////////////////////////////////////////
+  // Material use Usage
+  const [materialConstruction, setMaterialConstruction] = useState("");
+  const [materialAggregate, setMaterialAggregate] = useState("");
+  const [primaryMaterialProduction, setPrimaryMaterialProduction] = useState(
+    ""
+  );
+  const [materialUsage, setMaterialUsage] = useState("");
+  const [materialTones, setMaterialTones] = useState("");
+  const [openSourceLoop, setOpenSourceLoop] = useState("");
 
-  // Handle Material Use
+  const handleMaterialConstruction = (eventKey) => {
+    setMaterialConstruction(eventKey);
+  };
+  const handleMaterialAggregate = (eventKey) => {
+    setMaterialAggregate(eventKey);
+  };
+  const handlePrimaryMaterialProduction = (eventKey) => {
+    setPrimaryMaterialProduction(eventKey);
+  };
+  const handleMaterialUsage = (eventKey) => {
+    setMaterialUsage(eventKey);
+  };
+  const handleMaterialTones = (eventKey) => {
+    setMaterialTones(eventKey);
+  };
+  const handleOpenSourceLoop = (eventKey) => {
+    setOpenSourceLoop(eventKey);
+  };
+  /////////////////////////////////////////////////
+  // water supply Usage
+  const [waterSupplyUsage, setWaterSupplyUsage] = useState("");
+  const [waterSupplyCubicMeters, setWaterSupplyCubicMeters] = useState("");
 
+  const handleWaterSupplyUsage = (eventKey) => {
+    setWaterSupplyUsage(eventKey);
+  };
+  const handleWaterSupplyCubicMeters = (eventKey) => {
+    setWaterSupplyCubicMeters(eventKey);
+  };
 
+  /////////////////////////////////////////////////
+  // water supply Usage
 
+  const [waterDisposalConstruction, setWaterDisposalConstruction] = useState(
+    ""
+  );
+  const [waterDisposalAggregates, setWaterDisposalAggregates] = useState("");
+  const [waterDisposalReUse, setWaterDisposalReUse] = useState("");
+  const [waterDisposalUsage, setWaterDisposalUsage] = useState("");
+  const [waterDisposalKWH, setWaterDisposalKWH] = useState("");
 
-  ////////////////////
+  const handleWaterDisposalConstruction = (eventKey) => {
+    setWaterDisposalConstruction(eventKey);
+  };
+  const handleWaterDisposalAggregates = (eventKey) => {
+    setWaterDisposalAggregates(eventKey);
+  };
+  const handleWaterDisposalReUse = (eventKey) => {
+    setWaterDisposalReUse(eventKey);
+  };
+  const handleWaterDisposalUsage = (eventKey) => {
+    setWaterDisposalUsage(eventKey);
+  };
+  const handleWaterDisposalKWH = (eventKey) => {
+    setWaterDisposalKWH(eventKey);
+  };
 
-  // FormHandler for all 
+  /////////////////////////////////////////////////
+  // FormHandler for all
   const formHandler = () => {
     if (electricityusage) {
       var data = {
-        "usage": usage,
-        "checkBoxValue": checkBoxValue,
-        "dropDown": dropDown
-      }
+        usage: usage,
+        checkBoxValue: checkBoxValue,
+        dropDown: dropDown,
+      };
       console.log(data);
-    }
-    else if (onsite) {
+    } else if (onsite) {
       var data = {
-        "gaseous": gaseous,
-        "CNG": CNG,
-        "kwh": KWH,
-        "onSiteUsage": onSiteUsage,
-        "onsiteCheckBoxValue": onsiteCheckBoxValue
-      }
+        gaseous: gaseous,
+        CNG: CNG,
+        kwh: KWH,
+        onSiteUsage: onSiteUsage,
+        onsiteCheckBoxValue: onsiteCheckBoxValue,
+      };
       console.log(data);
-    }
-    else if (bionergy) {
+    } else if (bionergy) {
       var data = {
-        "biofuel": biofuel,
-        "bioethanol": bioethanol,
-        "liter": liter,
-        "bioEnergyUsage": bioEnergyUsage,
-        "bioEnergyCheckBoxValue": bioEnergyCheckBoxValue
-      }
+        biofuel: biofuel,
+        bioethanol: bioethanol,
+        liter: liter,
+        bioEnergyUsage: bioEnergyUsage,
+        bioEnergyCheckBoxValue: bioEnergyCheckBoxValue,
+      };
+      console.log(data);
+    } else if (materialuse) {
+      var data = {
+        materialConstruction: materialConstruction,
+        materialAggregate: materialAggregate,
+        primaryMaterialProduction: primaryMaterialProduction,
+        materialUsage: materialUsage,
+        materialTones: materialTones,
+        openSourceLoop: openSourceLoop,
+      };
+      console.log(data);
+    } else if (watersupply) {
+      var data = {
+        waterSupplyUsage: waterSupplyUsage,
+        waterSupplyCubicMeters: waterSupplyCubicMeters,
+      };
+      console.log(data);
+    } else if (waterdisposal) {
+      var data = {
+        waterDisposalConstruction: waterDisposalConstruction,
+        waterDisposalAggregates: waterDisposalAggregates,
+        waterDisposalReUse: waterDisposalReUse,
+        waterDisposalUsage: waterDisposalUsage,
+        waterDisposalKWH: waterDisposalKWH,
+      };
       console.log(data);
     }
-    else if (materialuse) {
-
-    }
-  }
+  };
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -240,7 +317,8 @@ const Construction = (props) => {
                 setUsage={setUsage}
                 handleDropdown={handleDropdown}
                 checkBoxValue={checkBoxValue}
-                handleInput={handleInput} />
+                handleInput={handleInput}
+              />
             ) : bionergy ? (
               <Bioenergy
                 handleBiofuel={handleBiofuel}
@@ -248,9 +326,18 @@ const Construction = (props) => {
                 setBioEnergyUsage={setBioEnergyUsage}
                 handleLiter={handleLiter}
                 bioEnergyCheckBoxValue={bioEnergyCheckBoxValue}
-                handleBioEnergyInput={handleBioEnergyInput} />
+                handleBioEnergyInput={handleBioEnergyInput}
+              />
             ) : materialuse ? (
               <MaterialUse
+                handleMaterialConstruction={handleMaterialConstruction}
+                handleMaterialAggregate={handleMaterialAggregate}
+                handlePrimaryMaterialProduction={
+                  handlePrimaryMaterialProduction
+                }
+                handleMaterialUsage={handleMaterialUsage}
+                handleMaterialTones={handleMaterialTones}
+                handleOpenSourceLoop={handleOpenSourceLoop}
               />
             ) : onsite ? (
               <OnSite
@@ -259,11 +346,23 @@ const Construction = (props) => {
                 setOnSiteUsage={setOnSiteUsage}
                 handleKWH={handleKWH}
                 onsiteCheckBoxValue={onsiteCheckBoxValue}
-                handleOnsiteInput={handleOnsiteInput} />
+                handleOnsiteInput={handleOnsiteInput}
+              />
             ) : waterdisposal ? (
-              <WaterDisposal />
+              <WaterDisposal
+                handleWaterDisposalConstruction={
+                  handleWaterDisposalConstruction
+                }
+                handleWaterDisposalAggregates={handleWaterDisposalAggregates}
+                handleWaterDisposalReUse={handleWaterDisposalReUse}
+                handleWaterDisposalUsage={handleWaterDisposalUsage}
+                handleWaterDisposalKWH={handleWaterDisposalKWH}
+              />
             ) : watersupply ? (
-              <WaterSupply />
+              <WaterSupply
+                handleWaterSupplyUsage={handleWaterSupplyUsage}
+                handleWaterSupplyCubicMeters={handleWaterSupplyCubicMeters}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>

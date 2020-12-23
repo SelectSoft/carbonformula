@@ -8,7 +8,7 @@ import App from "../horizontally_scrolable/horizontalscrol";
 import Freightpage from "./elements/freightPage";
 
 const Freight = (props) => {
-  const [freight, setFreight] = useState(false);
+  const [freight, setFreight] = useState(true);
   const handleMenuItems = (link) => {
     console.log(link);
     if (link === "freight") {
@@ -25,6 +25,57 @@ const Freight = (props) => {
     const char = true;
     return char;
   };
+
+  ////// handle Freight page
+
+  const [freightVans, setFreightVans] = useState("");
+  const [freightClass, setFreightClass] = useState("");
+  const [freightDiesel, setFreightDiesel] = useState("");
+  const [freightDistance, setFreightDistance] = useState("");
+  const [freightKm, setFreightKm] = useState("");
+  const [freightCheck, setFreightCheck] = useState("");
+
+  const handleFreightVans = (eventKey) => {
+    setFreightVans(eventKey);
+  };
+  const handleFreightClass = (eventKey) => {
+    setFreightClass(eventKey);
+  };
+  const handleFreightDiesel = (eventKey) => {
+    setFreightDiesel(eventKey);
+  };
+  const handleFreightDistance = (eventKey) => {
+    setFreightDistance(eventKey);
+  };
+  const handleFreightKm = (eventKey) => {
+    setFreightKm(eventKey);
+  };
+  const handleFreightCheck = (event) => {
+    if (event.target.checked) {
+      setFreightCheck("checked");
+    } else {
+      setFreightCheck("notchecked");
+    }
+  };
+
+  ////////////////////////
+  //////////// form handler
+
+  const formHandler = () => {
+    if (freight) {
+      var data = {
+        freightVans: freightVans,
+        freightClass: freightClass,
+        freightDiesel: freightDiesel,
+        freightDistance: freightDistance,
+        freightKm: freightKm,
+        freightCheck: freightCheck,
+      };
+      console.log(data);
+    }
+  };
+
+  //////////////////
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -67,12 +118,20 @@ const Freight = (props) => {
             {/* <div className={classes.div1}>
               <App handleMenuItems={handleMenuItems} />
             </div> */}
-            <Freightpage />
+            <Freightpage
+              handleFreightVans={handleFreightVans}
+              handleFreightClass={handleFreightClass}
+              handleFreightDiesel={handleFreightDiesel}
+              handleFreightDistance={handleFreightDistance}
+              handleFreightKm={handleFreightKm}
+              handleFreightCheck={handleFreightCheck}
+            />
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

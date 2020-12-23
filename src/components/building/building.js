@@ -140,6 +140,301 @@ const Building = (props) => {
     const char = true;
     return char;
   };
+
+  //Handle Business opertunities electricity usage
+
+  const [electricityUsage, setElectricityUsage] = useState("");
+  const [electricityKWH, setElectricityKWH] = useState("");
+  const [electricityUsageCheckBox, setElectricityUsageCheckBox] = useState(
+    "notchecked"
+  );
+
+  const handleElectricityUsage = (eventKey) => {
+    setElectricityUsage(eventKey);
+  };
+  const handleElectricityKWH = (eventKey) => {
+    setElectricityKWH(eventKey);
+  };
+  const handleElectricityUsageCheckBox = (event) => {
+    if (event.target.checked) {
+      setElectricityUsageCheckBox("checked");
+    } else {
+      setElectricityUsageCheckBox("notchecked");
+    }
+  };
+
+  //////////////////////
+  //Handle Business opertunities Fuel usage
+
+  const [electricityGaseous, setElectricityGaseous] = useState("");
+  const [electricityCNG, setElectricityCNG] = useState("");
+  const [electricityFuelUsage, setElectricityFuelUsage] = useState("");
+  const [electricityFuelUsageKWH, setElectricityFuelUsageKWH] = useState("");
+  const [electricityFuelUsageCheck, setElectricityFuelUsageCheck] = useState(
+    "notchecked"
+  );
+
+  const handleElectricityGaseous = (eventKey) => {
+    setElectricityGaseous(eventKey);
+  };
+  const handleElectricityCNG = (eventKey) => {
+    setElectricityCNG(eventKey);
+  };
+  const handleElectricityFuelUsage = (eventKey) => {
+    setElectricityFuelUsage(eventKey);
+  };
+  const handleElectricityFuelUsageKWH = (eventKey) => {
+    setElectricityFuelUsageKWH(eventKey);
+  };
+  const handleElectricityFuelUsageCheck = (event) => {
+    if (event.target.checked) {
+      setElectricityFuelUsageCheck("checked");
+    } else {
+      setElectricityFuelUsageCheck("notchecked");
+    }
+  };
+
+  //////////////////////
+  //Handle Business opertunities Bio-energy usage
+
+  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("");
+  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("");
+  const [bioEnergyFuelUsage, setBioEnergyFuelUsage] = useState("");
+  const [bioEnergyLiter, setBioEnergyLiter] = useState("");
+  const [bioEnergyCheck, setBioEnergyCheck] = useState("notchecked");
+
+  const handleBioEnergyBioFuel = (eventKey) => {
+    setBioEnergyBioFuel(eventKey);
+  };
+  const handleBioEnergyBioethanol = (eventKey) => {
+    setBioEnergyBioethanol(eventKey);
+  };
+  const handleBioEnergyFuelUsage = (eventKey) => {
+    setBioEnergyFuelUsage(eventKey);
+  };
+  const handleBioEnergyLiter = (eventKey) => {
+    setBioEnergyLiter(eventKey);
+  };
+  const handleBioEnergyCheck = (event) => {
+    if (event.target.checked) {
+      setBioEnergyCheck("checked");
+    } else {
+      setBioEnergyCheck("notchecked");
+    }
+  };
+
+  //////////////////////
+  //Handle Business opertunities material usage
+
+  const [materialUseConstruction, setMaterialUseConstruction] = useState("");
+  const [materialUseAggregate, setMaterialUseAggregate] = useState("");
+  const [
+    materialUsePrimaryMaterialProduction,
+    setMaterialUsePrimaryMaterialProduction,
+  ] = useState("");
+  const [materialUseUsage, setMaterialUseUsage] = useState("");
+  const [materialUseTones, setMaterialUseTones] = useState("");
+  const [materialUseOpenSourceLoop, setMaterialUseOpenSourceLoop] = useState(
+    ""
+  );
+
+  const handleMaterialUseConstruction = (eventKey) => {
+    setMaterialUseConstruction(eventKey);
+  };
+  const handleMaterialUseAggregate = (eventKey) => {
+    setMaterialUseAggregate(eventKey);
+  };
+  const handleMaterialUsePrimaryMaterialProduction = (eventKey) => {
+    setMaterialUsePrimaryMaterialProduction(eventKey);
+  };
+  const handleMaterialUseUsage = (eventKey) => {
+    setMaterialUseUsage(eventKey);
+  };
+  const handleMaterialUseTones = (eventKey) => {
+    setMaterialUseTones(eventKey);
+  };
+  const handleMaterialUseOpenSourceLoop = (eventKey) => {
+    setMaterialUseOpenSourceLoop(eventKey);
+  };
+
+  //////////////////////
+  ///// handle water supply
+
+  const [waterSupplyUsage, setWaterSupplyUsage] = useState("");
+  const [waterSupplyCubicMeters, setWaterSupplyCubicMeters] = useState("");
+
+  const handleWaterSupplyUsage = (eventKey) => {
+    setWaterSupplyUsage(eventKey);
+  };
+
+  const handleWaterSupplyCubicMeters = (eventKey) => {
+    setWaterSupplyCubicMeters(eventKey);
+  };
+
+  //////////////////////
+
+  ///// handle water disposal
+
+  const [waterDisposalConstruction, setWaterDisposalConstruction] = useState(
+    ""
+  );
+  const [waterDisposalAggregate, setWaterDisposalAggregate] = useState("");
+  const [waterDisposalReUse, setWaterDisposalReUse] = useState("");
+  const [waterDisposalUsage, setWaterDisposalUsage] = useState("");
+  const [waterDisposalTonnes, setWaterDisposalTonnes] = useState("");
+
+  const handleWaterDisposalConstruction = (eventKey) => {
+    setWaterDisposalAggregate(eventKey);
+  };
+  const handleWaterDisposalAggregate = (eventKey) => {
+    setWaterDisposalAggregate(eventKey);
+  };
+  const handleWaterDisposalReUse = (eventKey) => {
+    setWaterDisposalReUse(eventKey);
+  };
+  const handleWaterDisposalUsage = (eventKey) => {
+    setWaterDisposalUsage(eventKey);
+  };
+  const handleWaterDisposalTonnes = (eventKey) => {
+    setWaterDisposalTonnes(eventKey);
+  };
+
+  /////////////////////
+
+  ///// handle water disposal
+
+  const [waterTreated, setWaterTreated] = useState("");
+  const [waterTreatmentCubicMeter, setWaterTreatmentCubicMeter] = useState("");
+  const [waterSupplyCarbonEmitted, setWaterSupplyCarbonEmitted] = useState("");
+
+  const handleWaterTreated = (eventKey) => {
+    setWaterTreated(eventKey);
+  };
+  const handleWaterTreatmentCubicMeter = (eventKey) => {
+    setWaterTreatmentCubicMeter(eventKey);
+  };
+  const handleWaterSupplyCarbonEmitted = (eventKey) => {
+    setWaterSupplyCarbonEmitted(eventKey);
+  };
+
+  //////////////////////
+
+  ////////////ReFrigant usage handling
+
+  const [
+    refrigrantKyotoProtocolStandard,
+    setRefrigrantKyotoProtocolStandard,
+  ] = useState("");
+  const [refrigrantCO2, setRefrigrantCO2] = useState("");
+  const [refrigrantUsage, setRefrigrantUsage] = useState("");
+  const [refrigrantKg, setRefrigrantKg] = useState("");
+
+  const handleRefrigrantKyotoProtocolStandard = (eventKey) => {
+    setRefrigrantKyotoProtocolStandard(eventKey);
+  };
+  const handleRefrigrantCO2 = (eventKey) => {
+    setRefrigrantCO2(eventKey);
+  };
+  const handleRefrigrantUsage = (eventKey) => {
+    setRefrigrantUsage(eventKey);
+  };
+  const handleRefrigrantKg = (eventKey) => {
+    setRefrigrantKg(eventKey);
+  };
+
+  ////////////////////////
+  ////////////Head and steam usage handling
+
+  const [heatAndSteamOnsite, setHeatAndSteamOnsite] = useState("");
+  const [heatAndSteamUsage, setHeatAndSteamUsage] = useState("");
+  const [heatAndSteamKWH, setHeatAndSteamKWH] = useState("");
+
+  const handleHeatAndSteamOnsite = (eventKey) => {
+    setHeatAndSteamOnsite(eventKey);
+  };
+  const handleHeatAndSteamUsage = (eventKey) => {
+    setHeatAndSteamUsage(eventKey);
+  };
+  const handleHeatAndSteamKWH = (eventKey) => {
+    setHeatAndSteamKWH(eventKey);
+  };
+
+  /////////////////////////
+  const formHandler = () => {
+    if (electricity) {
+      var data = {
+        electricityUsage: electricityUsage,
+        electricityKWH: electricityKWH,
+        electricityUsageCheckBox: electricityUsageCheckBox,
+      };
+      console.log(data);
+    } else if (fuel) {
+      var data = {
+        electricityGaseous: electricityGaseous,
+        electricityCNG: electricityCNG,
+        electricityFuelUsage: electricityFuelUsage,
+        electricityFuelUsageKWH: electricityFuelUsageKWH,
+        electricityFuelUsageCheck: electricityFuelUsageCheck,
+      };
+      console.log(data);
+    } else if (bioenergy) {
+      var data = {
+        bioEnergyBioFuel: bioEnergyBioFuel,
+        bioEnergyBioethanol: bioEnergyBioethanol,
+        bioEnergyFuelUsage: bioEnergyFuelUsage,
+        bioEnergyLiter: bioEnergyLiter,
+        bioEnergyCheck: bioEnergyCheck,
+      };
+      console.log(data);
+    } else if (material) {
+      var data = {
+        materialUseConstruction: materialUseConstruction,
+        materialUseAggregate: materialUseAggregate,
+        materialUsePrimaryMaterialProduction: materialUsePrimaryMaterialProduction,
+        materialUseUsage: materialUseUsage,
+        materialUseTones: materialUseTones,
+        materialUseOpenSourceLoop: materialUseOpenSourceLoop,
+      };
+      console.log(data);
+    } else if (watersupply) {
+      var data = {
+        waterSupplyUsage: waterSupplyUsage,
+        waterSupplyCubicMeters: waterSupplyCubicMeters,
+      };
+      console.log(data);
+    } else if (waterdisposal) {
+      var data = {
+        waterDisposalConstruction: waterDisposalConstruction,
+        waterDisposalAggregate: waterDisposalAggregate,
+        waterDisposalReUse: waterDisposalReUse,
+        waterDisposalUsage: waterDisposalUsage,
+        waterDisposalTonnes: waterDisposalTonnes,
+      };
+      console.log(data);
+    } else if (watertreatment) {
+      var data = {
+        waterTreated: waterTreated,
+        waterTreatmentCubicMeter: waterTreatmentCubicMeter,
+        waterSupplyCarbonEmitted: waterSupplyCarbonEmitted,
+      };
+      console.log(data);
+    } else if (refrigrant) {
+      var data = {
+        refrigrantKyotoProtocolStandard: refrigrantKyotoProtocolStandard,
+        refrigrantCO2: refrigrantCO2,
+        refrigrantUsage: refrigrantUsage,
+        refrigrantKg: refrigrantKg,
+      };
+      console.log(data);
+    } else if (heatnsteam) {
+      var data = {
+        heatAndSteamOnsite: heatAndSteamOnsite,
+        heatAndSteamUsage: heatAndSteamUsage,
+        heatAndSteamKWH: heatAndSteamKWH,
+      };
+      console.log(data);
+    }
+  };
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -183,29 +478,85 @@ const Building = (props) => {
               <App handleMenuItems={handleMenuItems} />
             </div>
             {electricity ? (
-              <Electricity />
+              <Electricity
+                handleElectricityKWH={handleElectricityKWH}
+                handleElectricityUsage={handleElectricityUsage}
+                handleElectricityUsageCheckBox={handleElectricityUsageCheckBox}
+              />
             ) : fuel ? (
-              <Fuel />
+              <Fuel
+                handleElectricityGaseous={handleElectricityGaseous}
+                handleElectricityCNG={handleElectricityCNG}
+                handleElectricityFuelUsage={handleElectricityFuelUsage}
+                handleElectricityFuelUsageKWH={handleElectricityFuelUsageKWH}
+                handleElectricityFuelUsageCheck={
+                  handleElectricityFuelUsageCheck
+                }
+              />
             ) : bioenergy ? (
-              <Bioenergy />
+              <Bioenergy
+                handleBioEnergyBioFuel={handleBioEnergyBioFuel}
+                handleBioEnergyBioethanol={handleBioEnergyBioethanol}
+                handleBioEnergyFuelUsage={handleBioEnergyFuelUsage}
+                handleBioEnergyLiter={handleBioEnergyLiter}
+                handleBioEnergyCheck={handleBioEnergyCheck}
+              />
             ) : material ? (
-              <MaterialUse />
+              <MaterialUse
+                handleMaterialUseConstruction={handleMaterialUseConstruction}
+                handleMaterialUseAggregate={handleMaterialUseAggregate}
+                handleMaterialUsePrimaryMaterialProduction={
+                  handleMaterialUsePrimaryMaterialProduction
+                }
+                handleMaterialUseUsage={handleMaterialUseUsage}
+                handleMaterialUseTones={handleMaterialUseTones}
+                handleMaterialUseOpenSourceLoop={
+                  handleMaterialUseOpenSourceLoop
+                }
+              />
             ) : heatnsteam ? (
-              <HeatnSteam />
+              <HeatnSteam
+                handleHeatAndSteamOnsite={handleHeatAndSteamOnsite}
+                handleHeatAndSteamUsage={handleHeatAndSteamUsage}
+                handleHeatAndSteamKWH={handleHeatAndSteamKWH}
+              />
             ) : refrigrant ? (
-              <Refrigrant />
+              <Refrigrant
+                handleRefrigrantKyotoProtocolStandard={
+                  handleRefrigrantKyotoProtocolStandard
+                }
+                handleRefrigrantCO2={handleRefrigrantCO2}
+                handleRefrigrantUsage={handleRefrigrantUsage}
+                handleRefrigrantKg={handleRefrigrantKg}
+              />
             ) : waterdisposal ? (
-              <WaterDisposal />
+              <WaterDisposal
+                handleWaterDisposalConstruction={
+                  handleWaterDisposalConstruction
+                }
+                handleWaterDisposalAggregate={handleWaterDisposalAggregate}
+                handleWaterDisposalReUse={handleWaterDisposalReUse}
+                handleWaterDisposalUsage={handleWaterDisposalUsage}
+                handleWaterDisposalTonnes={handleWaterDisposalTonnes}
+              />
             ) : watersupply ? (
-              <WaterSupply />
+              <WaterSupply
+                handleWaterSupplyUsage={handleWaterSupplyUsage}
+                handleWaterSupplyCubicMeters={handleWaterSupplyCubicMeters}
+              />
             ) : watertreatment ? (
-              <WaterTreatment />
+              <WaterTreatment
+                handleWaterTreated={handleWaterTreated}
+                handleWaterTreatmentCubicMeter={handleWaterTreatmentCubicMeter}
+                handleWaterSupplyCarbonEmitted={handleWaterSupplyCarbonEmitted}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

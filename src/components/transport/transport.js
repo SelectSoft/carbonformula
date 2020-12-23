@@ -68,6 +68,68 @@ const Construction = (props) => {
     const char = true;
     return char;
   };
+
+  //////////// handle tranSPort and travel Seas
+
+  const [seaPassangerType, setSeaPassangerType] = useState("");
+  const [seaDistance, setSeaDistance] = useState("");
+  const [seaKm, setSeaKm] = useState("");
+
+  const handleSeaPassangerType = (eventKey) => {
+    setSeaPassangerType(eventKey);
+  };
+  const handleSeDistance = (eventKey) => {
+    setSeaDistance(eventKey);
+  };
+  const handleSeaKm = (eventKey) => {
+    setSeaKm(eventKey);
+  };
+
+  ///////////////////
+
+  //////////// handle tranSPort and travel Seas
+
+  const [calculatefuelGaseous, setCalculatefuelGaseous] = useState("");
+  const [calculatefuelCNG, setCalculatefuelCNG] = useState("");
+  const [calculatefuelQuantity, setCalculatefuelQuantity] = useState("");
+  const [calculatefuelTonnes, setCalculatefuelTonnes] = useState("");
+
+  const handleCalculatefuelGaseous = (eventKey) => {
+    setCalculatefuelGaseous(eventKey);
+  };
+  const handleCalculatefuelCNG = (eventKey) => {
+    setCalculatefuelCNG(eventKey);
+  };
+  const handleCalculatefuelQuantity = (eventKey) => {
+    setCalculatefuelQuantity(eventKey);
+  };
+  const handleCalculatefuelTonnes = (eventKey) => {
+    setCalculatefuelTonnes(eventKey);
+  };
+
+  ///////////////////
+  /////////////form handlerrrrr
+
+  const formHandler = () => {
+    if (sea) {
+      var data = {
+        seaPassangerType: seaPassangerType,
+        seaDistance: seaDistance,
+        seaKm: seaKm,
+      };
+      console.log(data);
+    } else if (calculatefuel) {
+      var data = {
+        calculatefuelGaseous: calculatefuelGaseous,
+        calculatefuelCNG: calculatefuelCNG,
+        calculatefuelQuantity: calculatefuelQuantity,
+        calculatefuelTonnes: calculatefuelTonnes,
+      };
+      console.log(data);
+    }
+  };
+
+  //////////////
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -117,15 +179,25 @@ const Construction = (props) => {
             ) : electriccar ? (
               <Electriccar />
             ) : calculatefuel ? (
-              <Calculatefuel />
+              <Calculatefuel
+                handleCalculatefuelGaseous={handleCalculatefuelGaseous}
+                handleCalculatefuelCNG={handleCalculatefuelCNG}
+                handleCalculatefuelQuantity={handleCalculatefuelQuantity}
+                handleCalculatefuelTonnes={handleCalculatefuelTonnes}
+              />
             ) : sea ? (
-              <Sea />
+              <Sea
+                handleSeaPassangerType={handleSeaPassangerType}
+                handleSeDistance={handleSeDistance}
+                handleSeaKm={handleSeaKm}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>
                 <button
                   className="btn btn-success btn-lg"
                   style={{ backgroundColor: "#85B91C", color: "white" }}
+                  onClick={formHandler}
                 >
                   Add to total emissions
                 </button>

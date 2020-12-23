@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+
 import classes from "../../style/fuel.module.css";
-const Refrigrant = () => {
+const Refrigrant = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -12,51 +14,30 @@ const Refrigrant = () => {
             <p style={{ fontSize: "25px" }}>Type of refrigrant: </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Kyoto protocol standard
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleRefrigrantKyotoProtocolStandard}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Kyoto Protocol Standard
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
-          <div className="dropdown col-md-3">
-            <br />
-            <button
-              style={{ marginLeft: "2px" }}
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              CO2
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleRefrigrantCO2}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                CO2
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -67,31 +48,25 @@ const Refrigrant = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleRefrigrantUsage(event.target.value)
+              }
+            />
           </div>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Kg
-              {/* <span class="caret"></span> */}
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleRefrigrantKg}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Kg
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
           {/* <div className="col-md-3">

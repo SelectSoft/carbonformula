@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from "react-bootstrap/Dropdown";
+
 const MaterialUse = (props) => {
   return (
     <React.Fragment>
@@ -13,63 +14,45 @@ const MaterialUse = (props) => {
           </div>
 
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
-            <Dropdown onSelect={props.handleDropdown}>
+            <Dropdown onSelect={props.handleMaterialConstruction}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Construction
-                  </Dropdown.Toggle>
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
                 <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
 
-          <div class="dropdown col-md-3">
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Aggregates
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleMaterialAggregate}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Aggregate
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
-          <div class="dropdown col-md-3">
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Primary material production
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handlePrimaryMaterialProduction}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Primary material production
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -80,53 +63,40 @@ const MaterialUse = (props) => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              placeholder="Enter usage"
+              onChange={(event) =>
+                props.handleMaterialUsage(event.target.value)
+              }
+              style={{ width: "100%", height: "35px" }}
+            />
           </div>
 
-          <div class="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Tonnes
-              {/* <span class="caret"></span> */}
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleMaterialTones}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Tones
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
-          <div class="dropdown col-md-3">
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Open-source Loop
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleOpenSourceLoop}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Open-source Loop
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
 

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-const land = () => {
+import Dropdown from "react-bootstrap/Dropdown";
+
+const land = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -11,9 +13,19 @@ const land = () => {
             <p style={{ fontSize: "25px" }}>Vehical </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
+          <div className="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleCarTravelVehicl}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Car
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <br /> */}
+            {/* <button
               className="btn dropdown-toggle"
               type="button"
               data-toggle="dropdown"
@@ -31,7 +43,7 @@ const land = () => {
               <li>
                 <a >JavaScript</a>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           <div className="col-md-3">
@@ -40,7 +52,17 @@ const land = () => {
           </div>
 
           <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
+            <Dropdown onSelect={props.handleCarTravelType}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Mini
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <br />
             <button
               style={{ marginLeft: "2px" }}
               className="btn dropdown-toggle"
@@ -60,7 +82,7 @@ const land = () => {
               <li>
                 <a >JavaScript</a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 
@@ -72,11 +94,26 @@ const land = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleCarTravelDistance(event.target.value)
+              }
+            />
           </div>
 
-          <div class="dropdown col-md-7" style={{ width: "100%" }}>
-            <br />
+          <div class="dropdown col-md-7" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleCarTravelKm}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Km
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <br />
             <button
               class="btn dropdown-toggle"
               type="button"
@@ -84,7 +121,7 @@ const land = () => {
               style={{ border: "1px solid black" }}
             >
               Km
-              {/* <span class="caret"></span> */}
+
             </button>
             <ul class="dropdown-menu">
               <li>
@@ -96,7 +133,7 @@ const land = () => {
               <li>
                 <a >JavaScript</a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 

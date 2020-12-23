@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 
-const Hotelstay = () => {
+const Hotelstay = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -12,27 +13,17 @@ const Hotelstay = () => {
             <p style={{ fontSize: "25px" }}>Country: </p>
           </div>
 
-          <div class="dropdown col-md-2" style={{ width: "100%" }}>
-            <br />
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              UK
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleHoteStayCountry}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                UK
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -43,7 +34,12 @@ const Hotelstay = () => {
 
           <div class="dropdown col-md-2">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleHoteStayNoOfNights(event.target.value)
+              }
+            />
           </div>
         </div>
 
@@ -53,7 +49,11 @@ const Hotelstay = () => {
         </div>
         <div class="col-md-4" style={{ padding: "0px" }}>
           <br />
-          <input type="checkbox" style={{ width: "30px", height: "30px" }} />
+          <input
+            type="checkbox"
+            style={{ width: "30px", height: "30px" }}
+            onClick={props.handleHoteStayCheck}
+          />
         </div>
       </div>
     </React.Fragment>

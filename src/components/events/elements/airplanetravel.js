@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-const Airplanetravel = () => {
+import Dropdown from "react-bootstrap/Dropdown";
+
+const Airplanetravel = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -11,25 +13,18 @@ const Airplanetravel = () => {
             <p style={{ fontSize: "25px" }}>Departure airport </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            ></button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleAirPlaneTravelDepartureAirport}>
+              <Dropdown.Toggle
+                variant="success"
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
           <div className="col-md-3">
@@ -37,26 +32,18 @@ const Airplanetravel = () => {
             <p style={{ fontSize: "25px" }}>Via: </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              style={{ marginLeft: "2px" }}
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            ></button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleAirPlaneTravelVia}>
+              <Dropdown.Toggle
+                variant="success"
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -65,25 +52,18 @@ const Airplanetravel = () => {
             <p style={{ fontSize: "25px" }}>Arival airport </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            ></button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleAirPlaneTravelArivalAirport}>
+              <Dropdown.Toggle
+                variant="success"
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -92,27 +72,17 @@ const Airplanetravel = () => {
             <p style={{ fontSize: "25px" }}>Class: </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            >
-              Economy
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleAirPlaneTravelClass}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Economy
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
 
           <div className="col-md-3">
@@ -120,26 +90,18 @@ const Airplanetravel = () => {
             <p style={{ fontSize: "25px" }}>Passenger: </p>
           </div>
 
-          <div className="dropdown col-md-3" style={{ width: "100%" }}>
-            <br />
-            <button
-              style={{ marginLeft: "2px" }}
-              className="btn dropdown-toggle"
-              type="button"
-              data-toggle="dropdown"
-              style={{ border: "1px solid black" }}
-            ></button>
-            <ul class="dropdown-menu">
-              <li>
-                <a >HTML</a>
-              </li>
-              <li>
-                <a >CSS</a>
-              </li>
-              <li>
-                <a >JavaScript</a>
-              </li>
-            </ul>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleAirPlaneTravelPassenger}>
+              <Dropdown.Toggle
+                variant="success"
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         <div className="row">
@@ -149,7 +111,11 @@ const Airplanetravel = () => {
           </div>
           <div class="col-md-1" style={{ padding: "0px" }}>
             <br />
-            <input type="checkbox" style={{ width: "30px", height: "30px" }} />
+            <input
+              type="checkbox"
+              style={{ width: "30px", height: "30px" }}
+              onClick={props.handleAirPlaneTravelReturn}
+            />
           </div>
           <div class="col-md-2" style={{ padding: "0px" }}>
             <br />
@@ -157,7 +123,11 @@ const Airplanetravel = () => {
           </div>
           <div class="col-md-1" style={{ padding: "0px" }}>
             <br />
-            <input type="checkbox" style={{ width: "30px", height: "30px" }} />
+            <input
+              type="checkbox"
+              style={{ width: "30px", height: "30px" }}
+              onClick={props.handleAirPlaneTravelSingle}
+            />
           </div>
         </div>
         <button style={{ float: "right" }} class="btn btn-danger btn-md">

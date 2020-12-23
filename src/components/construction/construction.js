@@ -152,6 +152,13 @@ const Construction = (props) => {
   }
   /////////////////////////////////////////////////
 
+  // Handle Material Use
+
+
+
+
+  ////////////////////
+
   // FormHandler for all 
   const formHandler = () => {
     if (electricityusage) {
@@ -181,6 +188,9 @@ const Construction = (props) => {
         "bioEnergyCheckBoxValue": bioEnergyCheckBoxValue
       }
       console.log(data);
+    }
+    else if (materialuse) {
+
     }
   }
   return (

@@ -114,7 +114,7 @@ const Construction = (props) => {
               <Electriccar />
             ) : calculatefuel ? (
               <Calculatefuel />
-            ) : Ferry ? (
+            ) : ferry ? (
               <Ferry />
             ) : null}
             <div className="container" style={{ width: "100%" }}>

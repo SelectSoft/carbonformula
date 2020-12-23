@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-const Electricity = () => {
+import Dropdown from "react-bootstrap/Dropdown";
+
+const Electricity = (props) => {
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -14,10 +16,27 @@ const Electricity = () => {
 
           <div className="col-md-3">
             <br />
-            <input style={{ width: "100%", height: "35px" }} />
+            <input
+              style={{ width: "100%", height: "35px" }}
+              onChange={(event) =>
+                props.handleElectricityUsage(event.target.value)
+              }
+            />
           </div>
+          <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
+            <Dropdown onSelect={props.handleElectricityKWH}>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                KWH
+              </Dropdown.Toggle>
 
-          <div class="dropdown col-md-3">
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
+                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
+                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          {/* <div class="dropdown col-md-3">
             <br />
             <button
               class="btn dropdown-toggle"
@@ -38,7 +57,7 @@ const Electricity = () => {
                 <a >JavaScript</a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another

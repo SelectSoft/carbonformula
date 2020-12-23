@@ -182,6 +182,45 @@ const Construction = (props) => {
   const handleElectricCarKm = (eventKey) => {
     setElectricCarKm(eventKey);
   };
+  //////////// handle tranSPort and travel Seas
+
+  const [seaPassangerType, setSeaPassangerType] = useState("");
+  const [seaDistance, setSeaDistance] = useState("");
+  const [seaKm, setSeaKm] = useState("");
+
+  const handleSeaPassangerType = (eventKey) => {
+    setSeaPassangerType(eventKey);
+  };
+  const handleSeDistance = (eventKey) => {
+    setSeaDistance(eventKey);
+  };
+  const handleSeaKm = (eventKey) => {
+    setSeaKm(eventKey);
+  };
+
+  ///////////////////
+
+  //////////// handle tranSPort and travel Seas
+
+  const [calculatefuelGaseous, setCalculatefuelGaseous] = useState("");
+  const [calculatefuelCNG, setCalculatefuelCNG] = useState("");
+  const [calculatefuelQuantity, setCalculatefuelQuantity] = useState("");
+  const [calculatefuelTonnes, setCalculatefuelTonnes] = useState("");
+
+  const handleCalculatefuelGaseous = (eventKey) => {
+    setCalculatefuelGaseous(eventKey);
+  };
+  const handleCalculatefuelCNG = (eventKey) => {
+    setCalculatefuelCNG(eventKey);
+  };
+  const handleCalculatefuelQuantity = (eventKey) => {
+    setCalculatefuelQuantity(eventKey);
+  };
+  const handleCalculatefuelTonnes = (eventKey) => {
+    setCalculatefuelTonnes(eventKey);
+  };
+
+  ///////////////////
 
   /////////////////////////
 
@@ -212,6 +251,21 @@ const Construction = (props) => {
         electricCarType: electricCarType,
         electricCarDistance: electricCarDistance,
         electricCarKm: electricCarKm,
+      };
+      console.log(data);
+    } else if (ferry) {
+      var data = {
+        seaPassangerType: seaPassangerType,
+        seaDistance: seaDistance,
+        seaKm: seaKm,
+      };
+      console.log(data);
+    } else if (calculatefuel) {
+      var data = {
+        calculatefuelGaseous: calculatefuelGaseous,
+        calculatefuelCNG: calculatefuelCNG,
+        calculatefuelQuantity: calculatefuelQuantity,
+        calculatefuelTonnes: calculatefuelTonnes,
       };
       console.log(data);
     }
@@ -285,9 +339,18 @@ const Construction = (props) => {
                 handleElectricCarKm={handleElectricCarKm}
               />
             ) : calculatefuel ? (
-              <Calculatefuel />
+              <Calculatefuel
+                handleCalculatefuelGaseous={handleCalculatefuelGaseous}
+                handleCalculatefuelCNG={handleCalculatefuelCNG}
+                handleCalculatefuelQuantity={handleCalculatefuelQuantity}
+                handleCalculatefuelTonnes={handleCalculatefuelTonnes}
+              />
             ) : ferry ? (
-              <Ferry />
+              <Ferry
+                handleSeaPassangerType={handleSeaPassangerType}
+                handleSeDistance={handleSeDistance}
+                handleSeaKm={handleSeaKm}
+              />
             ) : null}
             <div className="container" style={{ width: "100%" }}>
               <center>

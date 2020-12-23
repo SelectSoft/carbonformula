@@ -8,7 +8,7 @@ import Hotel from "./elements/hotel";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Hotelstay = (props) => {
-  const [hotelstay, setHotelstay] = useState(false);
+  const [hotelstay, setHotelstay] = useState(true);
   const handleMenuItems = (link) => {
     console.log(link);
     if (link === "hotelstay") {

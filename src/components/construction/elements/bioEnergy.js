@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Bioenergy = (props) => {
   return (
@@ -17,12 +17,18 @@ const Bioenergy = (props) => {
             <Dropdown onSelect={props.handleBiofuel}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Bio-Fuel
-                  </Dropdown.Toggle>
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Bioethanol">Bioethanol</Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel">Biodiesel </Dropdown.Item>
+                <Dropdown.Item eventKey="Biomethane">Biomethane </Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel">
+                  Biodiesel (from used cooking oil){" "}
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel(from tallow)">
+                  Biodiesel (from tallow){" "}
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -30,12 +36,12 @@ const Bioenergy = (props) => {
             <Dropdown onSelect={props.handleBiothanol}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Bioethanol
-                  </Dropdown.Toggle>
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="litres">litres</Dropdown.Item>
+                <Dropdown.Item eventKey="GJ">GJ </Dropdown.Item>
+                <Dropdown.Item eventKey="kg">kg</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -51,19 +57,19 @@ const Bioenergy = (props) => {
             <input
               onChange={(event) => props.setBioEnergyUsage(event.target.value)}
               placeholder="Enter usage"
-              style={{ width: "100%", height: "35px" }} />
+              style={{ width: "100%", height: "35px" }}
+            />
           </div>
 
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleLiter}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Liter
-                  </Dropdown.Toggle>
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="GJ">GJ </Dropdown.Item>
+                <Dropdown.Item eventKey="kg">kg</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -75,9 +81,12 @@ const Bioenergy = (props) => {
         </div>
         <div class="col-md-4" style={{ padding: "0px" }}>
           <br />
-          <input type="checkbox"
-            value={props.bioEnergyCheckBoxValue} onClick={props.handleBioEnergyInput}
-            style={{ width: "30px", height: "30px" }} />
+          <input
+            type="checkbox"
+            value={props.bioEnergyCheckBoxValue}
+            onClick={props.handleBioEnergyInput}
+            style={{ width: "30px", height: "30px" }}
+          />
         </div>
         <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another fuel

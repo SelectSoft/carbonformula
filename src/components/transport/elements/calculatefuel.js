@@ -19,9 +19,9 @@ const Calculatefuel = (props) => {
                 Gaseous
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="CNG">Liquid fuels</Dropdown.Item>
+                <Dropdown.Item eventKey="LNG">Solid fuels</Dropdown.Item>
+                <Dropdown.Item eventKey="LPG">Biofuel</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -37,9 +37,18 @@ const Calculatefuel = (props) => {
                 CNG
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="CNG">CNG</Dropdown.Item>
+                <Dropdown.Item eventKey="LNG">LNG</Dropdown.Item>
+                <Dropdown.Item eventKey="LPG">LPG</Dropdown.Item>
+                <Dropdown.Item eventKey="Natural Gas">
+                  Natural Gas
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Natural Gas (100% mineral blend)">
+                  Natural Gas (100% mineral blend)
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Other petroleum gas">
+                  Other petroleum gas
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -67,9 +76,13 @@ const Calculatefuel = (props) => {
                 Tonnes
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="litres">litres</Dropdown.Item>
+                <Dropdown.Item eventKey="kWh (Net CV)">
+                  kWh (Net CV)
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="kWh (Gross CV)">
+                  kWh (Gross CV)
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

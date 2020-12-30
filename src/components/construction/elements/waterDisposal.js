@@ -20,9 +20,12 @@ const WaterDisposal = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="refuse">Refuse</Dropdown.Item>
+                <Dropdown.Item eventKey="electrical">
+                  Electrical item{" "}
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="metal">Metal</Dropdown.Item>
+                <Dropdown.Item eventKey="other">Other</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -34,9 +37,21 @@ const WaterDisposal = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Asbestos">Asbestos</Dropdown.Item>
+                <Dropdown.Item eventKey="asphalt">Asphalt</Dropdown.Item>
+                <Dropdown.Item eventKey="bricks">Bricks</Dropdown.Item>
+                <Dropdown.Item eventKey="concrete">Concrete</Dropdown.Item>
+                <Dropdown.Item eventKey="insulation">Insulation</Dropdown.Item>
+                <Dropdown.Item eventKey="metals">Metals</Dropdown.Item>
+                <Dropdown.Item eventKey="soils">Soils</Dropdown.Item>
+                <Dropdown.Item eventKey="mineral oil">
+                  Mineral oil
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="plasterboard">
+                  Plasterboard
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="tyres">Tyres</Dropdown.Item>
+                <Dropdown.Item eventKey="wood">Woods</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -48,9 +63,7 @@ const WaterDisposal = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="reuse">Re-use</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -72,15 +85,12 @@ const WaterDisposal = (props) => {
           </div>
 
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
-            <Dropdown onSelect={props.handleWaterDisposalKWH}>
+            <Dropdown onSelect={props.handleWaterDisposalTonnes}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                KWH
+                Tonnes
               </Dropdown.Toggle>
-
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="tonnes">Tonnes</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

@@ -21,9 +21,15 @@ const Bioenergy = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Bioethanol">Bioethanol</Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel">Biodiesel </Dropdown.Item>
+                <Dropdown.Item eventKey="Biomethane">Biomethane </Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel">
+                  Biodiesel (from used cooking oil){" "}
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Biodiesel(from tallow)">
+                  Biodiesel (from tallow){" "}
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -34,9 +40,9 @@ const Bioenergy = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="litres">litres</Dropdown.Item>
+                <Dropdown.Item eventKey="GJ">GJ </Dropdown.Item>
+                <Dropdown.Item eventKey="kg">kg</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -63,9 +69,8 @@ const Bioenergy = (props) => {
                 Liter
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="GJ">GJ </Dropdown.Item>
+                <Dropdown.Item eventKey="kg">kg</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

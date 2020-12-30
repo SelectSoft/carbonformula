@@ -19,9 +19,16 @@ const FreightPage = (props) => {
                 Vans
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="hgv">HGV (all diesel)</Dropdown.Item>
+                <Dropdown.Item eventKey="another">
+                  HGV refrigerated (all diesel)
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="freight">
+                  Freight flights
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Rail">Rail </Dropdown.Item>
+                <Dropdown.Item eventKey="Sea tanker">Sea tanker </Dropdown.Item>
+                <Dropdown.Item eventKey="Cargo ship">Cargo ship </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -32,9 +39,15 @@ const FreightPage = (props) => {
                 Class 1(upto 1.305tonnes)
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="class2">
+                  Class 2(1.305 to 1.74 tonnes)
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="class3">
+                  Class 3(1.74 to 3.5 tonnes)
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="average">
+                  Average(upto 3.5 tonnes)
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -44,9 +57,18 @@ const FreightPage = (props) => {
                 Diesel
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Petrol">Petrol</Dropdown.Item>
+                <Dropdown.Item eventKey="CNG">CNG </Dropdown.Item>
+                <Dropdown.Item eventKey="LP"> LP</Dropdown.Item>
+                <Dropdown.Item eventKey="Plug-in Hybrid Electric Vehicle">
+                  {" "}
+                  Plug-in Hybrid Electric Vehicle
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Battery Electric Vehicle">
+                  {" "}
+                  Battery Electric Vehicle
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="unknown"> unknown</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -70,12 +92,11 @@ const FreightPage = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleFreightKm}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Km
+                Tonnes
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Km">Km</Dropdown.Item>
+                <Dropdown.Item eventKey="miles">Miles</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

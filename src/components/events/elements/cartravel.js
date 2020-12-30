@@ -19,9 +19,10 @@ const Cartravel = (props) => {
                 Car
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="bike">Notor bike</Dropdown.Item>
+                <Dropdown.Item eventKey="taxi">Taxis</Dropdown.Item>
+                <Dropdown.Item eventKey="bus">Bus</Dropdown.Item>
+                <Dropdown.Item eventKey="rail">Rail</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -37,9 +38,20 @@ const Cartravel = (props) => {
                 Mini
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Supermini">Supermini</Dropdown.Item>
+                <Dropdown.Item eventKey="Lower medium">
+                  Lower medium
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Upper medium">
+                  Upper medium
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Executive">Executive</Dropdown.Item>
+                <Dropdown.Item eventKey="Luxury">Luxury</Dropdown.Item>
+                <Dropdown.Item eventKey="Sports">Sports</Dropdown.Item>
+                <Dropdown.Item eventKey="Dual purpose 4X4">
+                  Dual purpose 4X4
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="MPV">MPV</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -67,9 +79,7 @@ const Cartravel = (props) => {
                 Km
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="miles">Miles</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

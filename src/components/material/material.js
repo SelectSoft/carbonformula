@@ -20,9 +20,14 @@ const MaterialUse = (props) => {
                 Construction
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Organic">Organic</Dropdown.Item>
+                <Dropdown.Item eventKey="Electrial Item">
+                  Electrial Item
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="metal">Metal</Dropdown.Item>
+                <Dropdown.Item eventKey="plastic">Plastic</Dropdown.Item>
+                <Dropdown.Item eventKey="paper">Paper</Dropdown.Item>
+                <Dropdown.Item eventKey="other">Other</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -33,9 +38,24 @@ const MaterialUse = (props) => {
                 Aggregates
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Average construction">
+                  Average construction
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Asbestos">Asbestos</Dropdown.Item>
+                <Dropdown.Item eventKey="asphalt">Asphalt</Dropdown.Item>
+                <Dropdown.Item eventKey="bricks">Bricks</Dropdown.Item>
+                <Dropdown.Item eventKey="concrete">Concrete</Dropdown.Item>
+                <Dropdown.Item eventKey="insulation">Insulation</Dropdown.Item>
+                <Dropdown.Item eventKey="metals">Metals</Dropdown.Item>
+                <Dropdown.Item eventKey="soils">Soils</Dropdown.Item>
+                <Dropdown.Item eventKey="mineral oil">
+                  Mineral oil
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="plasterboard">
+                  Plasterboard
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="tyres">Tyres</Dropdown.Item>
+                <Dropdown.Item eventKey="wood">Woods</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -47,9 +67,9 @@ const MaterialUse = (props) => {
                 Primary material production
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Primary material production">
+                  Primary material production
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -76,9 +96,7 @@ const MaterialUse = (props) => {
                 Tonnes
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Tonnes">Tonnes</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -89,9 +107,9 @@ const MaterialUse = (props) => {
               Open-source Loop
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-              <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-              <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+              <Dropdown.Item eventKey="Open-source Loop">
+                Open-source Loop
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>

@@ -15,14 +15,13 @@ const Air = (props) => {
 
           <div className="dropdown col-md-3" style={{ width: "100%" }}>
             <Dropdown onSelect={props.handleAirPlaneTravelDepartureAirport}>
-              <Dropdown.Toggle
-                variant="success"
-                id="dropdown-basic"
-              ></Dropdown.Toggle>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Departure airport
+              </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Departureairport">
+                  Departure airport
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* <br />
@@ -52,14 +51,11 @@ const Air = (props) => {
 
           <div className="dropdown col-md-3" style={{ width: "100%" }}>
             <Dropdown onSelect={props.handleAirPlaneTravelVia}>
-              <Dropdown.Toggle
-                variant="success"
-                id="dropdown-basic"
-              ></Dropdown.Toggle>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Optional
+              </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="optional">Optional</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}
             {/* <br />
@@ -91,14 +87,11 @@ const Air = (props) => {
 
           <div className="dropdown col-md-3" style={{ width: "100%" }}>
             <Dropdown onSelect={props.handleAirPlaneTravelArivalAirport}>
-              <Dropdown.Toggle
-                variant="success"
-                id="dropdown-basic"
-              ></Dropdown.Toggle>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Arival airport
+              </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="arival">Arival airport</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* <br />
@@ -133,9 +126,7 @@ const Air = (props) => {
                 Economy
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="Economy">Economy</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* <br />
@@ -162,18 +153,16 @@ const Air = (props) => {
 
           <div className="col-md-3">
             <br />
-            <p style={{ fontSize: "25px" }}>Passenger: </p>
+            <p style={{ fontSize: "25px" }}>No of Passenger: </p>
           </div>
+
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleAirPlaneTravelPassenger}>
-              <Dropdown.Toggle
-                variant="success"
-                id="dropdown-basic"
-              ></Dropdown.Toggle>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Passenger
+              </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="passenger">Passenger</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

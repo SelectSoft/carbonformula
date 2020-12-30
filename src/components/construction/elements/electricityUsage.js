@@ -1,7 +1,6 @@
 import React, { useState, Component } from "react";
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from "react-bootstrap/Dropdown";
 const Electricity = (props) => {
-
   return (
     <React.Fragment>
       <div className="container" style={{ width: "100%", margin: "0px" }}>
@@ -20,20 +19,18 @@ const Electricity = (props) => {
               // value={}
               onChange={(event) => props.setUsage(event.target.value)}
               placeholder="Enter usage"
-              style={{ width: "100%", height: "35px" }} />
+              style={{ width: "100%", height: "35px" }}
+            />
           </div>
-
 
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleDropdown}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 KWH
-                  </Dropdown.Toggle>
+              </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="KWH">KWH</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -46,9 +43,13 @@ const Electricity = (props) => {
 
         <div class="col-md-4" style={{ padding: "0px" }}>
           <br />
-          <input type="checkbox" name="check-box"
-            value={props.checkBoxValue} onClick={props.handleInput}
-            style={{ width: "30px", height: "30px" }} />
+          <input
+            type="checkbox"
+            name="check-box"
+            value={props.checkBoxValue}
+            onClick={props.handleInput}
+            style={{ width: "30px", height: "30px" }}
+          />
         </div>
       </div>
     </React.Fragment>

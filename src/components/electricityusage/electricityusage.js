@@ -31,9 +31,7 @@ const Electricity = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="KWH">KWH</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

@@ -31,9 +31,9 @@ const WaterSupply = (props) => {
                 Cubic Meters
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                <Dropdown.Item eventKey="another">Another action</Dropdown.Item>
-                <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                <Dropdown.Item eventKey="million litres">
+                  million litres
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>

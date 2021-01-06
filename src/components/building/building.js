@@ -377,6 +377,7 @@ const Building = (props) => {
         electricityFuelUsageKWH: electricityFuelUsageKWH,
         electricityFuelUsageCheck: electricityFuelUsageCheck,
       };
+      props.jsonObjOfCalculator(data)
       console.log(data);
     } else if (bioenergy) {
       var data = {

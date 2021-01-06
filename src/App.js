@@ -34,7 +34,6 @@ function App() {
     loc.push(data);
     setJsonObj(loc);
     console.log("previous ", jsonObj)
-    console.log("comming data ", data)
   }
   const renderSwitch = () => {
     switch (toogle) {

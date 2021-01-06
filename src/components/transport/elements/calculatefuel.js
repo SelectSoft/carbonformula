@@ -67,6 +67,7 @@ const Calculatefuel = (props) => {
               onChange={(event) =>
                 props.handleCalculatefuelQuantity(event.target.value)
               }
+              value={props.calculatefuelQuantity}
             />
           </div>
 

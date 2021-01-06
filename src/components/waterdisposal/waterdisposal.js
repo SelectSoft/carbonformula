@@ -79,6 +79,7 @@ const WaterDisposal = (props) => {
               onChange={(event) =>
                 props.handleWaterDisposalUsage(event.target.value)
               }
+              value={props.waterDisposalUsage}
             />
           </div>
 

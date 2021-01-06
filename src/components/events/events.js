@@ -180,7 +180,11 @@ const Events = (props) => {
         hoteStayNoOfNights: hoteStayNoOfNights,
         hoteStayCheck: hoteStayCheck,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setHotelStayCheck("");
+      setHotelStayNoOfNights("");
+      setHotelStayCheck("notchecked");
     } else if (airplanetravel) {
       var data = {
         airPlaneTravelDepartureAirport: airPlaneTravelDepartureAirport,
@@ -191,7 +195,15 @@ const Events = (props) => {
         airPlaneTravelReturn: airPlaneTravelReturn,
         airPlaneTravelSingle: airPlaneTravelSingle,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setAirPlaneTravelDepartureAirport("");
+      setAirPlaneTravelArivalAirport("");
+      setAirPlaneTravelVia("");
+      setAirPlaneTravelClass("");
+      setAirPlaneTravelPassenger("");
+      setAirPlaneTravelReturn("notchecked");
+      setAirPlaneTravelSingle("notchecked");
     } else if (cartravel) {
       var data = {
         carTravelVehicl: carTravelVehicl,
@@ -199,7 +211,12 @@ const Events = (props) => {
         carTravelDistance: carTravelDistance,
         carTravelKm: carTravelKm,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setCarTravel("Car");
+      setCarTravelType("Mini");
+      setCarTravelDistance("");
+      setCarTravelKm("");
     } else if (electriccar) {
       var data = {
         electricCarVehicl: electricCarVehicl,
@@ -207,8 +224,14 @@ const Events = (props) => {
         electricCarDistance: electricCarDistance,
         electricCarKm: electricCarKm,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setElectricCarVehicl("Car");
+      setElectricCarType("Type");
+      setElectricCarDistance("");
+      setElectricCarKm("");
     }
+    alert("Data added");
   };
   //////////////////////
   return (
@@ -270,6 +293,7 @@ const Events = (props) => {
               <Hotelstay
                 handleHoteStayCountry={handleHoteStayCountry}
                 handleHoteStayNoOfNights={handleHoteStayNoOfNights}
+                hoteStayNoOfNights={hoteStayNoOfNights}
                 handleHoteStayCheck={handleHoteStayCheck}
               />
             ) : cartravel ? (
@@ -277,6 +301,7 @@ const Events = (props) => {
                 handleCarTravelVehicl={handleCarTravelVehicl}
                 handleCarTravelType={handleCarTravelType}
                 handleCarTravelDistance={handleCarTravelDistance}
+                carTravelDistance={carTravelDistance}
                 handleCarTravelKm={handleCarTravelKm}
                 carTravelVehicl={carTravelVehicl}
                 carTravelType={carTravelType}
@@ -285,6 +310,7 @@ const Events = (props) => {
               <Electriccar
                 handleElectricCarVehicl={handleElectricCarVehicl}
                 handleElectricCarType={handleElectricCarType}
+                electricCarDistance={electricCarDistance}
                 handleElectricCarDistance={handleElectricCarDistance}
                 handleElectricCarKm={handleElectricCarKm}
                 electricCarVehicl={electricCarVehicl}

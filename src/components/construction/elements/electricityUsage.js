@@ -20,6 +20,7 @@ const Electricity = (props) => {
               onChange={(event) => props.setUsage(event.target.value)}
               placeholder="Enter usage"
               style={{ width: "100%", height: "35px" }}
+              value={props.usage}
             />
           </div>
 

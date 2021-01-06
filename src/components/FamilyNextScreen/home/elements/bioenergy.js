@@ -16,18 +16,18 @@ const Bioenergy = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleBioEnergyBioFuel}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Bio-Fuel
+                {props.bioEnergyBioFuel}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Bioethanol">Bioethanol</Dropdown.Item>
                 <Dropdown.Item eventKey="Biodiesel">Biodiesel </Dropdown.Item>
                 <Dropdown.Item eventKey="Biomethane">Biomethane </Dropdown.Item>
-                <Dropdown.Item eventKey="Biodiesel">
-                  Biodiesel (from used cooking oil){" "}
+                <Dropdown.Item eventKey="Biodiesel (from used cooking oil)">
+                  Biodiesel (from used cooking oil)
                 </Dropdown.Item>
                 <Dropdown.Item eventKey="Biodiesel(from tallow)">
-                  Biodiesel (from tallow){" "}
+                  Biodiesel (from tallow)
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -35,7 +35,7 @@ const Bioenergy = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleBioEnergyBioethanol}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Bioethanol
+                {props.bioEnergyBioethanol}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -65,7 +65,7 @@ const Bioenergy = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleBioEnergyLiter}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Liter
+                {props.bioEnergyLiter}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="GJ">GJ </Dropdown.Item>

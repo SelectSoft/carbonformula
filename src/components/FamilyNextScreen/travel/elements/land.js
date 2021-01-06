@@ -16,11 +16,11 @@ const land = (props) => {
           <div className="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCarTravelVehicl}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Car
+                {props.carTravelVehicl}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="bike">Notor bike</Dropdown.Item>
-                <Dropdown.Item eventKey="taxi">Taxis</Dropdown.Item>
+                <Dropdown.Item eventKey="bike">Motor bike</Dropdown.Item>
+                <Dropdown.Item eventKey="taxi">Taxi</Dropdown.Item>
                 <Dropdown.Item eventKey="bus">Bus</Dropdown.Item>
                 <Dropdown.Item eventKey="rail">Rail</Dropdown.Item>
               </Dropdown.Menu>
@@ -55,7 +55,7 @@ const land = (props) => {
           <div className="dropdown col-md-3" style={{ width: "100%" }}>
             <Dropdown onSelect={props.handleCarTravelType}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Mini
+                {props.carTravelType}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Supermini">Supermini</Dropdown.Item>

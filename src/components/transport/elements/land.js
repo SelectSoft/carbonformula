@@ -111,6 +111,7 @@ const land = (props) => {
               onChange={(event) =>
                 props.handleCarTravelDistance(event.target.value)
               }
+              value={props.carTravelDistance}
             />
           </div>
 

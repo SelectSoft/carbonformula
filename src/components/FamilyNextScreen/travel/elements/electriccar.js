@@ -52,7 +52,7 @@ const Electriccar = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricCarType}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Mini
+                {props.electricCarType}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Supermini">Supermini</Dropdown.Item>

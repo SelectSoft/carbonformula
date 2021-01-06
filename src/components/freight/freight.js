@@ -71,8 +71,17 @@ const Freight = (props) => {
         freightKm: freightKm,
         freightCheck: freightCheck,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+
+      setFreightVans("Vans");
+      setFreightClass("Class 1(upto 1.305tonnes)");
+      setFreightDiesel("Diesel");
+      setFreightDistance("");
+      setFreightKm("Tonnes");
+      setFreightCheck("");
     }
+    alert("Data added");
   };
 
   //////////////////
@@ -123,6 +132,7 @@ const Freight = (props) => {
               handleFreightClass={handleFreightClass}
               handleFreightDiesel={handleFreightDiesel}
               handleFreightDistance={handleFreightDistance}
+              freightDistance={freightDistance}
               handleFreightKm={handleFreightKm}
               handleFreightCheck={handleFreightCheck}
               freightKm={freightKm}

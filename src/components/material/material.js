@@ -87,6 +87,7 @@ const MaterialUse = (props) => {
               onChange={(event) =>
                 props.handleMaterialUseUsage(event.target.value)
               }
+              value={props.materialUseUsage}
             />
           </div>
 

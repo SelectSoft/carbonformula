@@ -68,6 +68,7 @@ const Fuel = (props) => {
               onChange={(event) =>
                 props.handleElectricityFuelUsage(event.target.value)
               }
+              value={props.electricityFuelUsage}
             />
           </div>
 

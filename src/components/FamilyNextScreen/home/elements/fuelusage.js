@@ -16,13 +16,17 @@ const Fuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricityGaseous}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Gaseous
+                {props.electricityGaseous}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="CNG">Liquid fuels</Dropdown.Item>
-                <Dropdown.Item eventKey="LNG">Solid fuels</Dropdown.Item>
-                <Dropdown.Item eventKey="LPG">Biofuel</Dropdown.Item>
+                <Dropdown.Item eventKey="Liquid fuels">
+                  Liquid fuels
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Solid fuels">
+                  Solid fuels
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Biofuel">Biofuel</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -30,9 +34,8 @@ const Fuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricityCNG}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                CNG
+                {props.electricityCNG}
               </Dropdown.Toggle>
-
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="CNG">CNG</Dropdown.Item>
                 <Dropdown.Item eventKey="LNG">LNG</Dropdown.Item>

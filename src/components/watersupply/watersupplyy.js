@@ -22,6 +22,7 @@ const WaterSupply = (props) => {
               onChange={(event) =>
                 props.handleWaterSupplyUsage(event.target.value)
               }
+              value={props.waterSupplyUsage}
             />
           </div>
 

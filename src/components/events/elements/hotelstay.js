@@ -39,6 +39,7 @@ const Hotelstay = (props) => {
               onChange={(event) =>
                 props.handleHoteStayNoOfNights(event.target.value)
               }
+              value={props.hoteStayNoOfNights}
             />
           </div>
         </div>

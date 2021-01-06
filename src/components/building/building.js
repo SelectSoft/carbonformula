@@ -226,7 +226,9 @@ const Building = (props) => {
   //////////////////////
   //Handle Business opertunities material usage
 
-  const [materialUseConstruction, setMaterialUseConstruction] = useState("Construction");
+  const [materialUseConstruction, setMaterialUseConstruction] = useState(
+    "Construction"
+  );
   const [materialUseAggregate, setMaterialUseAggregate] = useState("Aggregate");
   const [
     materialUsePrimaryMaterialProduction,
@@ -278,7 +280,9 @@ const Building = (props) => {
   const [waterDisposalConstruction, setWaterDisposalConstruction] = useState(
     "Construction"
   );
-  const [waterDisposalAggregate, setWaterDisposalAggregate] = useState("Aggregate");
+  const [waterDisposalAggregate, setWaterDisposalAggregate] = useState(
+    "Aggregate"
+  );
   const [waterDisposalReUse, setWaterDisposalReUse] = useState("");
   const [waterDisposalUsage, setWaterDisposalUsage] = useState("");
   const [waterDisposalTonnes, setWaterDisposalTonnes] = useState("");
@@ -368,7 +372,10 @@ const Building = (props) => {
         electricityUsageCheckBox: electricityUsageCheckBox,
       };
       console.log("flag", data);
-      props.jsonObjOfCalculator(data)
+      props.jsonObjOfCalculator(data);
+      setElectricityUsage("");
+      setElectricityKWH("");
+      setElectricityUsageCheckBox("notchecked");
     } else if (fuel) {
       var data = {
         electricityGaseous: electricityGaseous,
@@ -377,8 +384,13 @@ const Building = (props) => {
         electricityFuelUsageKWH: electricityFuelUsageKWH,
         electricityFuelUsageCheck: electricityFuelUsageCheck,
       };
-      props.jsonObjOfCalculator(data)
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setElectricityGaseous("Gaseous");
+      setElectricityCNG("CNG");
+      setElectricityFuelUsage("");
+      setElectricityFuelUsageKWH("");
+      setElectricityFuelUsageCheck("notchecked");
     } else if (bioenergy) {
       var data = {
         bioEnergyBioFuel: bioEnergyBioFuel,
@@ -387,7 +399,13 @@ const Building = (props) => {
         bioEnergyLiter: bioEnergyLiter,
         bioEnergyCheck: bioEnergyCheck,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setBioEnergyBioFuel("Bio-Fuel");
+      setBioEnergyBioethanol("Bioethanol");
+      setBioEnergyFuelUsage("");
+      setBioEnergyLiter("Liter");
+      setBioEnergyCheck("notchecked");
     } else if (material) {
       var data = {
         materialUseConstruction: materialUseConstruction,
@@ -397,13 +415,23 @@ const Building = (props) => {
         materialUseTones: materialUseTones,
         materialUseOpenSourceLoop: materialUseOpenSourceLoop,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setMaterialUseConstruction("Construction");
+      setMaterialUseAggregate("Aggregate");
+      setMaterialUsePrimaryMaterialProduction("");
+      setMaterialUseUsage("");
+      setMaterialUseTones("");
+      setMaterialUseOpenSourceLoop("");
     } else if (watersupply) {
       var data = {
         waterSupplyUsage: waterSupplyUsage,
         waterSupplyCubicMeters: waterSupplyCubicMeters,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setWaterSupplyUsage("");
+      setWaterSupplyCubicMeters("");
     } else if (waterdisposal) {
       var data = {
         waterDisposalConstruction: waterDisposalConstruction,
@@ -412,14 +440,24 @@ const Building = (props) => {
         waterDisposalUsage: waterDisposalUsage,
         waterDisposalTonnes: waterDisposalTonnes,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setWaterDisposalConstruction("Construction");
+      setWaterDisposalAggregate("Aggregate");
+      setWaterDisposalReUse("");
+      setWaterDisposalUsage("");
+      setWaterDisposalTonnes("");
     } else if (watertreatment) {
       var data = {
         waterTreated: waterTreated,
         waterTreatmentCubicMeter: waterTreatmentCubicMeter,
         waterSupplyCarbonEmitted: waterSupplyCarbonEmitted,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setWaterTreated("");
+      setWaterTreatmentCubicMeter("");
+      setWaterSupplyCarbonEmitted("");
     } else if (refrigrant) {
       var data = {
         refrigrantKyotoProtocolStandard: refrigrantKyotoProtocolStandard,
@@ -427,15 +465,25 @@ const Building = (props) => {
         refrigrantUsage: refrigrantUsage,
         refrigrantKg: refrigrantKg,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setRefrigrantKyotoProtocolStandard("");
+      setRefrigrantCO2("Carbon Dioxide");
+      setRefrigrantUsage("");
+      setRefrigrantKg("");
     } else if (heatnsteam) {
       var data = {
         heatAndSteamOnsite: heatAndSteamOnsite,
         heatAndSteamUsage: heatAndSteamUsage,
         heatAndSteamKWH: heatAndSteamKWH,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setHeatAndSteamOnsite("");
+      setHeatAndSteamUsage("");
+      setHeatAndSteamKWH("");
     }
+    alert("Data added");
   };
   return (
     <React.Fragment>
@@ -484,11 +532,13 @@ const Building = (props) => {
                 handleElectricityKWH={handleElectricityKWH}
                 handleElectricityUsage={handleElectricityUsage}
                 handleElectricityUsageCheckBox={handleElectricityUsageCheckBox}
+                electricityUsage={electricityUsage}
               />
             ) : fuel ? (
               <Fuel
                 handleElectricityGaseous={handleElectricityGaseous}
                 handleElectricityCNG={handleElectricityCNG}
+                electricityFuelUsage={electricityFuelUsage}
                 handleElectricityFuelUsage={handleElectricityFuelUsage}
                 handleElectricityFuelUsageKWH={handleElectricityFuelUsageKWH}
                 handleElectricityFuelUsageCheck={
@@ -502,6 +552,7 @@ const Building = (props) => {
                 handleBioEnergyBioFuel={handleBioEnergyBioFuel}
                 handleBioEnergyBioethanol={handleBioEnergyBioethanol}
                 handleBioEnergyFuelUsage={handleBioEnergyFuelUsage}
+                bioEnergyFuelUsage={bioEnergyFuelUsage}
                 handleBioEnergyLiter={handleBioEnergyLiter}
                 handleBioEnergyCheck={handleBioEnergyCheck}
                 bioEnergyLiter={bioEnergyLiter}
@@ -518,6 +569,7 @@ const Building = (props) => {
                   handleMaterialUsePrimaryMaterialProduction
                 }
                 handleMaterialUseUsage={handleMaterialUseUsage}
+                materialUseUsage={materialUseUsage}
                 handleMaterialUseTones={handleMaterialUseTones}
                 handleMaterialUseOpenSourceLoop={
                   handleMaterialUseOpenSourceLoop
@@ -547,6 +599,7 @@ const Building = (props) => {
                 handleWaterDisposalAggregate={handleWaterDisposalAggregate}
                 handleWaterDisposalReUse={handleWaterDisposalReUse}
                 handleWaterDisposalUsage={handleWaterDisposalUsage}
+                waterDisposalUsage={waterDisposalUsage}
                 handleWaterDisposalTonnes={handleWaterDisposalTonnes}
                 waterDisposalAggregate={waterDisposalAggregate}
                 waterDisposalConstruction={waterDisposalConstruction}
@@ -555,12 +608,15 @@ const Building = (props) => {
               <WaterSupply
                 handleWaterSupplyUsage={handleWaterSupplyUsage}
                 handleWaterSupplyCubicMeters={handleWaterSupplyCubicMeters}
+                waterSupplyUsage={waterSupplyUsage}
               />
             ) : watertreatment ? (
               <WaterTreatment
                 handleWaterTreated={handleWaterTreated}
+                waterTreated={waterTreated}
                 handleWaterTreatmentCubicMeter={handleWaterTreatmentCubicMeter}
                 handleWaterSupplyCarbonEmitted={handleWaterSupplyCarbonEmitted}
+                waterSupplyCarbonEmitted={waterSupplyCarbonEmitted}
               />
             ) : null}
             <div className="container" style={{ width: "100%" }}>

@@ -73,7 +73,7 @@ const Home = (props) => {
   //////////////////////
   //Handle Business opertunities Fuel usage
 
-  const [electricityGaseous, setElectricityGaseous] = useState("");
+  const [electricityGaseous, setElectricityGaseous] = useState("CNG");
   const [electricityCNG, setElectricityCNG] = useState("");
   const [electricityFuelUsage, setElectricityFuelUsage] = useState("");
   const [electricityFuelUsageKWH, setElectricityFuelUsageKWH] = useState("");
@@ -97,10 +97,10 @@ const Home = (props) => {
   //////////////////////
   //Handle Business opertunities Bio-energy usage
 
-  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("");
-  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("");
+  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("Bioethanol");
+  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("litres");
   const [bioEnergyFuelUsage, setBioEnergyFuelUsage] = useState("");
-  const [bioEnergyLiter, setBioEnergyLiter] = useState("");
+  const [bioEnergyLiter, setBioEnergyLiter] = useState("GJ");
   const [bioEnergyCheck, setBioEnergyCheck] = useState("notchecked");
 
   const handleBioEnergyBioFuel = (eventKey) => {
@@ -135,6 +135,7 @@ const Home = (props) => {
         electricityUsage: electricityUsage,
         electricityKWH: electricityKWH,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
     } else if (fuelusage) {
       var data = {
@@ -143,6 +144,7 @@ const Home = (props) => {
         electricityFuelUsage: electricityFuelUsage,
         electricityFuelUsageKWH: electricityFuelUsageKWH,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
     } else if (bioenergy) {
       var data = {
@@ -151,12 +153,14 @@ const Home = (props) => {
         bioEnergyFuelUsage: bioEnergyFuelUsage,
         bioEnergyLiter: bioEnergyLiter,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
     } else if (watersupply) {
       var data = {
         waterSupplyUsage: waterSupplyUsage,
         waterSupplyCubicMeters: waterSupplyCubicMeters,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
     }
   };
@@ -206,15 +210,20 @@ const Home = (props) => {
             ) : fuelusage ? (
               <Fuelusage
                 handleElectricityGaseous={handleElectricityGaseous}
+                electricityGaseous={electricityGaseous}
                 handleElectricityCNG={handleElectricityCNG}
+                electricityCNG={electricityCNG}
                 handleElectricityFuelUsage={handleElectricityFuelUsage}
                 handleElectricityFuelUsageKWH={handleElectricityFuelUsageKWH}
               />
             ) : bioenergy ? (
               <Bioenergy
                 handleBioEnergyBioFuel={handleBioEnergyBioFuel}
+                bioEnergyBioFuel={bioEnergyBioFuel}
+                bioEnergyBioethanol={bioEnergyBioethanol}
                 handleBioEnergyBioethanol={handleBioEnergyBioethanol}
                 handleBioEnergyFuelUsage={handleBioEnergyFuelUsage}
+                bioEnergyLiter={bioEnergyLiter}
                 handleBioEnergyLiter={handleBioEnergyLiter}
               />
             ) : watersupply ? (

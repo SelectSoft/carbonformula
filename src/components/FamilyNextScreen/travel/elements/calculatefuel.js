@@ -16,12 +16,16 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelGaseous}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Gaseous
+                {props.calculatefuelGaseous}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="CNG">Liquid fuels</Dropdown.Item>
-                <Dropdown.Item eventKey="LNG">Solid fuels</Dropdown.Item>
-                <Dropdown.Item eventKey="LPG">Biofuel</Dropdown.Item>
+                <Dropdown.Item eventKey="Liquid fuels">
+                  Liquid fuels
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Solid fuels">
+                  Solid fuels
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Biofuel">Biofuel</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -34,7 +38,7 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelCNG}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                CNG
+                {props.calculatefuelCNG}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="CNG">CNG</Dropdown.Item>
@@ -73,7 +77,7 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelTonnes}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Tonnes
+                {props.calculatefuelTonnes}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="litres">litres</Dropdown.Item>

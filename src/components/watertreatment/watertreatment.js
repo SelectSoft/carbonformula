@@ -20,6 +20,7 @@ const WaterTreatment = (props) => {
             <input
               style={{ width: "100%", height: "35px" }}
               onChange={(event) => props.handleWaterTreated(event.target.value)}
+              value={props.waterTreated}
             />
           </div>
 
@@ -48,6 +49,7 @@ const WaterTreatment = (props) => {
               onChange={(event) =>
                 props.handleWaterSupplyCarbonEmitted(event.target.value)
               }
+              value={props.waterSupplyCarbonEmitted}
             />
           </div>
 

@@ -58,6 +58,7 @@ const Bioenergy = (props) => {
               onChange={(event) => props.setBioEnergyUsage(event.target.value)}
               placeholder="Enter usage"
               style={{ width: "100%", height: "35px" }}
+              value={props.bioEnergyUsage}
             />
           </div>
 

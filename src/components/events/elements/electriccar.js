@@ -70,6 +70,7 @@ const Electriccar = (props) => {
               onChange={(event) =>
                 props.handleElectricCarDistance(event.target.value)
               }
+              value={props.electricCarDistance}
             />
           </div>
 

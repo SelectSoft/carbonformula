@@ -23,10 +23,19 @@ import { useState } from "react";
 function App() {
   const [toogle, setToogle] = useState(" ");
   const [back, setBack] = useState("");
+  const [jsonObj, setJsonObj] = useState([]);
   const toogleHandler = (val) => {
     setBack(toogle);
     setToogle(val);
   };
+  const jsonObjOfCalculator = (data) => {
+    console.log(jsonObj)
+    var loc = jsonObj;
+    loc.push(data);
+    setJsonObj(loc);
+    console.log("previous ", jsonObj)
+    console.log("comming data ", data)
+  }
   const renderSwitch = () => {
     switch (toogle) {
       case "/organisation/sign-in":
@@ -34,13 +43,16 @@ function App() {
       case "/familyNextScreen/sign-in":
         return <Logiin toogleHandler={toogleHandler} />;
       case "/activity":
-        return <Activity toogleHandler={toogleHandler} />;
+        return <Activity
+          toogleHandler={toogleHandler} />;
       case "/addActivity":
         return <AddActivity toogleHandler={toogleHandler} />;
       case "/family/add-activity":
         return <AddActivity toogleHandler={toogleHandler} />;
       case "/building":
-        return <Building toogleHandler={toogleHandler} />;
+        return <Building
+          jsonObjOfCalculator={jsonObjOfCalculator}
+          toogleHandler={toogleHandler} />;
       case "/view-emissions":
         return <Title toogleHandler={toogleHandler} back={back} />;
       case "/back-totalEmissions":
@@ -54,7 +66,9 @@ function App() {
       case "/hotel-stay":
         return <Hotel toogleHandler={toogleHandler} />;
       case "/construction":
-        return <Construction toogleHandler={toogleHandler} />;
+        return <Construction
+          jsonObjOfCalculator={jsonObjOfCalculator}
+          toogleHandler={toogleHandler} />;
       case "/home":
         return <Home toogleHandler={toogleHandler} />;
       case "/travel":

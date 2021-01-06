@@ -222,6 +222,7 @@ const Construction = (props) => {
         checkBoxValue: checkBoxValue,
         dropDown: dropDown,
       };
+      props.jsonObjOfCalculator(data)
       console.log(data);
     } else if (onsite) {
       var data = {

@@ -367,7 +367,8 @@ const Building = (props) => {
         electricityKWH: electricityKWH,
         electricityUsageCheckBox: electricityUsageCheckBox,
       };
-      console.log(data);
+      console.log("flag", data);
+      props.jsonObjOfCalculator(data)
     } else if (fuel) {
       var data = {
         electricityGaseous: electricityGaseous,

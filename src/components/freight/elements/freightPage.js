@@ -86,6 +86,7 @@ const FreightPage = (props) => {
               onChange={(event) =>
                 props.handleFreightDistance(event.target.value)
               }
+              value={props.freightDistance}
             />
           </div>
 

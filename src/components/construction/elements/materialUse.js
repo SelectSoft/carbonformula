@@ -89,6 +89,7 @@ const MaterialUse = (props) => {
                 props.handleMaterialUsage(event.target.value)
               }
               style={{ width: "100%", height: "35px" }}
+              value={props.materialUsage}
             />
           </div>
 

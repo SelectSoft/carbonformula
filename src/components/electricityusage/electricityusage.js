@@ -21,6 +21,7 @@ const Electricity = (props) => {
               onChange={(event) =>
                 props.handleElectricityUsage(event.target.value)
               }
+              value={props.electricityUsage}
             />
           </div>
 

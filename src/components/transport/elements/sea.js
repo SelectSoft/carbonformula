@@ -39,6 +39,7 @@ const Sea = (props) => {
             <input
               style={{ width: "100%", height: "35px" }}
               onChange={(event) => props.handleSeDistance(event.target.value)}
+              value={props.seaDistance}
             />
           </div>
 

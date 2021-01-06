@@ -64,6 +64,7 @@ const Onsite = (props) => {
             <input
               onChange={(event) => props.setOnSiteUsage(event.target.value)}
               placeholder="Enter usage"
+              value={props.onSiteUsage}
               style={{ width: "100%", height: "35px" }}
             />
           </div>

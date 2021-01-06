@@ -60,6 +60,7 @@ const Bioenergy = (props) => {
               onChange={(event) =>
                 props.handleBioEnergyFuelUsage(event.target.value)
               }
+              value={props.bioEnergyFuelUsage}
             />
           </div>
 

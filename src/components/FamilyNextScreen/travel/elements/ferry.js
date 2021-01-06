@@ -16,11 +16,13 @@ const Ferry = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleSeaPassangerType}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Foot
+                {props.seaPassangerType}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="car">Car passenger</Dropdown.Item>
-                <Dropdown.Item eventKey="average">
+                <Dropdown.Item eventKey="Car passenger">
+                  Car passenger
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Average (all passenger)">
                   Average (all passenger)
                 </Dropdown.Item>
               </Dropdown.Menu>

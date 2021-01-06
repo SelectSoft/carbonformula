@@ -12,7 +12,7 @@ import Land from "./elements/land";
 import Sea from "./elements/sea";
 import { isElementOfType } from "react-dom/test-utils";
 
-const Construction = (props) => {
+const Transport = (props) => {
   const [air, setAir] = useState(false);
   const [sea, setSea] = useState(true);
   const [land, setLand] = useState(false);
@@ -215,7 +215,15 @@ const Construction = (props) => {
         airPlaneTravelReturn: airPlaneTravelReturn,
         airPlaneTravelSingle: airPlaneTravelSingle,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+      setAirPlaneTravelDepartureAirport("");
+      setAirPlaneTravelArivalAirport("");
+      setAirPlaneTravelVia("");
+      setAirPlaneTravelClass("");
+      setAirPlaneTravelPassenger("");
+      setAirPlaneTravelReturn("notchecked");
+      setAirPlaneTravelSingle("notchecked");
     } else if (land) {
       var data = {
         carTravelVehicl: carTravelVehicl,
@@ -223,7 +231,13 @@ const Construction = (props) => {
         carTravelDistance: carTravelDistance,
         carTravelKm: carTravelKm,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+
+      setCarTravel("Car");
+      setCarTravelType("Type");
+      setCarTravelDistance("");
+      setCarTravelKm("");
     } else if (electriccar) {
       var data = {
         electricCarVehicl: electricCarVehicl,
@@ -231,14 +245,25 @@ const Construction = (props) => {
         electricCarDistance: electricCarDistance,
         electricCarKm: electricCarKm,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+
+      setElectricCarVehicl("Car");
+      setElectricCarType("Type");
+      setElectricCarDistance("");
+      setElectricCarKm("");
     } else if (sea) {
       var data = {
         seaPassangerType: seaPassangerType,
         seaDistance: seaDistance,
         seaKm: seaKm,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+
+      setSeaPassangerType("");
+      setSeaDistance("");
+      setSeaKm("");
     } else if (calculatefuel) {
       var data = {
         calculatefuelGaseous: calculatefuelGaseous,
@@ -246,8 +271,15 @@ const Construction = (props) => {
         calculatefuelQuantity: calculatefuelQuantity,
         calculatefuelTonnes: calculatefuelTonnes,
       };
+      props.jsonObjOfCalculator(data);
       console.log(data);
+
+      setCalculatefuelGaseous("Gaseous");
+      setCalculatefuelCNG("CNG");
+      setCalculatefuelQuantity("");
+      setCalculatefuelTonnes("Tonnes");
     }
+    alert("Data added");
   };
   //////////////////////
   return (
@@ -311,6 +343,7 @@ const Construction = (props) => {
                 handleCarTravelVehicl={handleCarTravelVehicl}
                 handleCarTravelType={handleCarTravelType}
                 handleCarTravelDistance={handleCarTravelDistance}
+                carTravelDistance={carTravelDistance}
                 handleCarTravelKm={handleCarTravelKm}
                 carTravelVehicl={carTravelVehicl}
                 carTravelType={carTravelType}
@@ -319,6 +352,7 @@ const Construction = (props) => {
               <Electriccar
                 handleElectricCarVehicl={handleElectricCarVehicl}
                 handleElectricCarType={handleElectricCarType}
+                electricCarDistance={electricCarDistance}
                 handleElectricCarDistance={handleElectricCarDistance}
                 handleElectricCarKm={handleElectricCarKm}
                 electricCarVehicl={electricCarVehicl}
@@ -329,6 +363,7 @@ const Construction = (props) => {
                 handleCalculatefuelGaseous={handleCalculatefuelGaseous}
                 handleCalculatefuelCNG={handleCalculatefuelCNG}
                 handleCalculatefuelQuantity={handleCalculatefuelQuantity}
+                calculatefuelQuantity={calculatefuelQuantity}
                 handleCalculatefuelTonnes={handleCalculatefuelTonnes}
                 calculatefuelGaseous={calculatefuelGaseous}
                 calculatefuelCNG={calculatefuelCNG}
@@ -338,6 +373,7 @@ const Construction = (props) => {
               <Sea
                 handleSeaPassangerType={handleSeaPassangerType}
                 handleSeDistance={handleSeDistance}
+                seaDistance={seaDistance}
                 handleSeaKm={handleSeaKm}
               />
             ) : null}
@@ -393,4 +429,4 @@ const Construction = (props) => {
   );
 };
 
-export default Construction;
+export default Transport;

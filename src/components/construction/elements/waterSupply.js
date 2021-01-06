@@ -20,10 +20,14 @@ const WaterSupply = (props) => {
               onChange={(event) =>
                 props.handleWaterSupplyUsage(event.target.value)
               }
+              value={props.waterSupplyUsage}
             />
           </div>
 
-          <Dropdown style={{ marginTop: "21px" }} onSelect={props.handleWaterSupplyCubicMeters}>
+          <Dropdown
+            style={{ marginTop: "21px" }}
+            onSelect={props.handleWaterSupplyCubicMeters}
+          >
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Cubic meters
             </Dropdown.Toggle>
@@ -39,7 +43,7 @@ const WaterSupply = (props) => {
           Add another
         </button> */}
       </div>
-    </React.Fragment >
+    </React.Fragment>
   );
 };
 

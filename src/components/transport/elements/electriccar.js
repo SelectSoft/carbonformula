@@ -110,6 +110,7 @@ const Electriccar = (props) => {
               onChange={(event) =>
                 props.handleElectricCarDistance(event.target.value)
               }
+              value={props.electricCarDistance}
             />
           </div>
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>

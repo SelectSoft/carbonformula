@@ -3,30 +3,36 @@ import classes from "../../style/login.module.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Font, { Text } from "react-font";
 import Logo from "../home/logo";
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 const Login = (props) => {
-  const [email, setEmail] = useState("")
-  const [code, setCode] = useState("")
-  const [dropDown, setDropDown] = useState("")
+  const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
+  const [dropDown, setDropDown] = useState("Daily");
+  const [number, setNumebr] = useState("");
   const handleForm = () => {
     var data = {
-      "email": email,
-      "code": code,
-      "dropDown": dropDown
-    }
+      email: email,
+      code: code,
+      dropDown: dropDown,
+      number: number,
+    };
     console.log(data);
-    props.toogleHandler("/activity")
-  }
+    props.jsonObjOfCalculator(data);
+    props.toogleHandler("/activity");
+  };
   const handleDropdown = (eventKey) => {
-    setDropDown(eventKey)
-  }
+    setDropDown(eventKey);
+  };
   const codeHandler = (event) => {
-    setCode(event.target.value)
-  }
+    setCode(event.target.value);
+  };
   const emailHandler = (event) => {
-    setEmail(event.target.value)
-  }
+    setEmail(event.target.value);
+  };
+  const numberHandler = (event) => {
+    setNumebr(event.target.value);
+  };
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -104,38 +110,47 @@ const Login = (props) => {
                     What period of time are you calculating emmission over?
                   </h3>
                 </div>
-                <div class="dropdown col-md-3" style={{ marginTop: "28px" }}>
+                <div class="col-md-3" style={{ marginTop: "28px" }}>
+                  <input
+                    // value={}
+                    onChange={numberHandler}
+                    placeholder=""
+                    style={{ width: "100%", height: "35px" }}
+                    value={props.usage}
+                  />
+                </div>
+                <div class="dropdown col-md-1" style={{ marginTop: "28px" }}>
                   <Dropdown onSelect={handleDropdown}>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      Dropdown Example
-                  </Dropdown.Toggle>
+                      {dropDown}
+                    </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item eventKey="action">Action</Dropdown.Item>
-                      <Dropdown.Item eventKey="another" >Another action</Dropdown.Item>
-                      <Dropdown.Item eventKey="else">Something else</Dropdown.Item>
+                      <Dropdown.Item eventKey="Daily">Daily</Dropdown.Item>
+                      <Dropdown.Item eventKey="Monthly">Monthly</Dropdown.Item>
+                      <Dropdown.Item eventKey="Yearly">Yearly</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
               </div>
-            </div>
-            <div className="container" style={{ width: "100%" }}>
-              <center>
-                <Link>
-                  <button
-                    className="btn btn-lg"
-                    onClick={handleForm}
-                    style={{ backgroundColor: "#85B91C", color: "white" }}
-                  >
-                    Get Started
-                  </button>
-                </Link>
-              </center>
+              <div className="container" style={{ width: "100%" }}>
+                <center>
+                  <Link>
+                    <button
+                      className="btn btn-lg"
+                      onClick={handleForm}
+                      style={{ backgroundColor: "#85B91C", color: "white" }}
+                    >
+                      Get Started
+                    </button>
+                  </Link>
+                </center>
+              </div>
             </div>
           </div>
         </Font>
-      </div >
-    </React.Fragment >
+      </div>
+    </React.Fragment>
   );
 };
 

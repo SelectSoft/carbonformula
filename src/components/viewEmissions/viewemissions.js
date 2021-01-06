@@ -87,13 +87,11 @@ class ViewEmissions extends Component {
                 <tr key={movie.title}>
                   <td className={classes.tabledata}>{movie.title}</td>
                   <td className={classes.tabledata}>
-                    <input
-                      type="checkbox"
-                      style={{ width: "30px", height: "30px" }}
-                      onChange={(e) => {
-                        this.setState({ checkbox: e.target.value });
-                      }}
-                    />
+                    <span
+                      style={{ border: "1px solid #ccc", padding: "8px 10px" }}
+                    >
+                      3
+                    </span>
                   </td>
                   <td className={classes.tabledata}>{movie.value}</td>
                   <td className={classes.tabledata}></td>
@@ -124,13 +122,11 @@ class ViewEmissions extends Component {
                 <tr key={site.title}>
                   <td className={classes.tabledata}>{site.title}</td>
                   <td className={classes.tabledata}>
-                    <input
-                      type="checkbox"
-                      style={{ width: "30px", height: "30px" }}
-                      onChange={(e) => {
-                        this.setState({ checkbox: e.target.value });
-                      }}
-                    />
+                    <span
+                      style={{ border: "1px solid #ccc", padding: "8px 10px" }}
+                    >
+                      3
+                    </span>
                   </td>
                   <td className={classes.tabledata}>{site.value}</td>
                   <td className={classes.tabledata}></td>

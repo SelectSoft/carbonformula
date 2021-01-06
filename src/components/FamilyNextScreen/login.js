@@ -1,10 +1,34 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import classes from "../../style/login.module.css";
+import Dropdown from "react-bootstrap/Dropdown";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Font, { Text } from "react-font";
 import Logo from "../home/logo";
 import { Link } from "react-router-dom";
 const Login = (props) => {
+  const [email, setEmail] = useState("");
+  const [dropDown, setDropDown] = useState("Daily");
+  const [number, setNumebr] = useState("");
+  const handleForm = () => {
+    var data = {
+      email: email,
+      dropDown: dropDown,
+      number: number,
+    };
+    console.log(data);
+    props.jsonObjOfCalculator(data);
+    props.toogleHandler("/activity");
+  };
+  const handleDropdown = (eventKey) => {
+    setDropDown(eventKey);
+  };
+  const emailHandler = (event) => {
+    setEmail(event.target.value);
+  };
+  const numberHandler = (event) => {
+    setNumebr(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <div className={["container", classes.mainBody].join(" ")}>
@@ -49,6 +73,7 @@ const Login = (props) => {
                   type="text"
                   placeholder="Enter your email"
                   style={{ width: "100%" }}
+                  onChange={emailHandler}
                 />
               </div>
             </div>
@@ -72,29 +97,28 @@ const Login = (props) => {
                     What period of time are you calculating emmission over?
                   </h3>
                 </div>
+                <div class="col-md-3" style={{ marginTop: "28px" }}>
+                  <input
+                    // value={}
+                    onChange={numberHandler}
+                    placeholder=""
+                    style={{ width: "100%", height: "35px" }}
 
-                <div class="dropdown col-md-3">
-                  <br />
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    data-toggle="dropdown"
-                    style={{ border: "1px solid black" }}
-                  >
-                    Daily
-                    {/* <span class="caret"></span> */}
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a >HTML</a>
-                    </li>
-                    <li>
-                      <a >CSS</a>
-                    </li>
-                    <li>
-                      <a >JavaScript</a>
-                    </li>
-                  </ul>
+                    // value={props.usage}
+                  />
+                </div>
+                <div class="dropdown col-md-1" style={{ marginTop: "28px" }}>
+                  <Dropdown onSelect={handleDropdown}>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      {dropDown}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item eventKey="Daily">Daily</Dropdown.Item>
+                      <Dropdown.Item eventKey="Monthly">Monthly</Dropdown.Item>
+                      <Dropdown.Item eventKey="Yearly">Yearly</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </div>
               </div>
             </div>
@@ -103,6 +127,7 @@ const Login = (props) => {
                 <Link onClick={() => props.toogleHandler("/addActivity")}>
                   <button
                     className="btn btn-lg"
+                    onClick={handleForm}
                     style={{ backgroundColor: "#85B91C", color: "white" }}
                   >
                     Get Started

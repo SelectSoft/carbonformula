@@ -29,29 +29,43 @@ function App() {
     setToogle(val);
   };
   const jsonObjOfCalculator = (data) => {
-    console.log(jsonObj)
+    console.log(jsonObj);
     var loc = jsonObj;
     loc.push(data);
     setJsonObj(loc);
-    console.log("previous ", jsonObj)
-  }
+    console.log("previous ", jsonObj);
+    console.log("jsonObjOfCalculator", jsonObj);
+  };
+
   const renderSwitch = () => {
     switch (toogle) {
       case "/organisation/sign-in":
-        return <Login toogleHandler={toogleHandler} />;
+        return (
+          <Login
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/familyNextScreen/sign-in":
-        return <Logiin toogleHandler={toogleHandler} />;
+        return (
+          <Logiin
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/activity":
-        return <Activity
-          toogleHandler={toogleHandler} />;
+        return <Activity toogleHandler={toogleHandler} />;
       case "/addActivity":
         return <AddActivity toogleHandler={toogleHandler} />;
       case "/family/add-activity":
         return <AddActivity toogleHandler={toogleHandler} />;
       case "/building":
-        return <Building
-          jsonObjOfCalculator={jsonObjOfCalculator}
-          toogleHandler={toogleHandler} />;
+        return (
+          <Building
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/view-emissions":
         return <Title toogleHandler={toogleHandler} back={back} />;
       case "/back-totalEmissions":
@@ -59,17 +73,40 @@ function App() {
       case "/calculate-emissions":
         return <TotalEmissions toogleHandler={toogleHandler} />;
       case "/transport-and-travel":
-        return <Transport toogleHandler={toogleHandler} />;
+        return (
+          <Transport
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/freight":
-        return <Freight toogleHandler={toogleHandler} />;
+        return (
+          <Freight
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/hotel-stay":
-        return <Hotel toogleHandler={toogleHandler} />;
+        return (
+          <Hotel
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/construction":
-        return <Construction
-          jsonObjOfCalculator={jsonObjOfCalculator}
-          toogleHandler={toogleHandler} />;
+        return (
+          <Construction
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/home":
-        return <Home toogleHandler={toogleHandler} />;
+        return (
+          <Home
+            jsonObjOfCalculator={jsonObjOfCalculator}
+            toogleHandler={toogleHandler}
+          />
+        );
       case "/travel":
         return <Travel toogleHandler={toogleHandler} />;
       case "/hotelstay":

@@ -17,7 +17,7 @@ const MaterialUse = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleMaterialUseConstruction}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Construction
+                {props.materialUseConstruction}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Organic">Organic</Dropdown.Item>
@@ -35,7 +35,7 @@ const MaterialUse = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleMaterialUseAggregate}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Aggregates
+                {props.materialUseAggregate}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Average construction">
@@ -115,9 +115,9 @@ const MaterialUse = (props) => {
         </div>
       </div>
 
-      <button style={{ float: "right" }} class="btn btn-danger btn-md">
+      {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
         Add another
-      </button>
+      </button> */}
     </React.Fragment>
   );
 };

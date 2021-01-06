@@ -15,7 +15,7 @@ const Electriccar = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricCarVehicl}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Car
+                {props.electricCarVehicl}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="vans">Van</Dropdown.Item>
@@ -52,7 +52,7 @@ const Electriccar = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricCarType}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Mini
+                {props.electricCarType}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Supermini">Supermini</Dropdown.Item>
@@ -146,9 +146,9 @@ const Electriccar = (props) => {
           </div> */}
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

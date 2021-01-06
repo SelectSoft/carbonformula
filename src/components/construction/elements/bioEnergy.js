@@ -16,7 +16,7 @@ const Bioenergy = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleBiofuel}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Bio-Fuel
+                {props.biofuel}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -33,9 +33,9 @@ const Bioenergy = (props) => {
             </Dropdown>
           </div>
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
-            <Dropdown onSelect={props.handleBiothanol}>
+            <Dropdown value={props.bioethanol} onSelect={props.handleBiothanol}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Bioethanol
+                {props.bioethanol}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -64,7 +64,7 @@ const Bioenergy = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleLiter}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Liter
+                {props.liter}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -88,9 +88,9 @@ const Bioenergy = (props) => {
             style={{ width: "30px", height: "30px" }}
           />
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another fuel
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

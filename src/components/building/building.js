@@ -166,8 +166,8 @@ const Building = (props) => {
   //////////////////////
   //Handle Business opertunities Fuel usage
 
-  const [electricityGaseous, setElectricityGaseous] = useState("");
-  const [electricityCNG, setElectricityCNG] = useState("");
+  const [electricityGaseous, setElectricityGaseous] = useState("Gaseous");
+  const [electricityCNG, setElectricityCNG] = useState("CNG");
   const [electricityFuelUsage, setElectricityFuelUsage] = useState("");
   const [electricityFuelUsageKWH, setElectricityFuelUsageKWH] = useState("");
   const [electricityFuelUsageCheck, setElectricityFuelUsageCheck] = useState(
@@ -197,10 +197,10 @@ const Building = (props) => {
   //////////////////////
   //Handle Business opertunities Bio-energy usage
 
-  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("");
-  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("");
+  const [bioEnergyBioFuel, setBioEnergyBioFuel] = useState("Bio-Fuel");
+  const [bioEnergyBioethanol, setBioEnergyBioethanol] = useState("Bioethanol");
   const [bioEnergyFuelUsage, setBioEnergyFuelUsage] = useState("");
-  const [bioEnergyLiter, setBioEnergyLiter] = useState("");
+  const [bioEnergyLiter, setBioEnergyLiter] = useState("Liter");
   const [bioEnergyCheck, setBioEnergyCheck] = useState("notchecked");
 
   const handleBioEnergyBioFuel = (eventKey) => {
@@ -226,8 +226,8 @@ const Building = (props) => {
   //////////////////////
   //Handle Business opertunities material usage
 
-  const [materialUseConstruction, setMaterialUseConstruction] = useState("");
-  const [materialUseAggregate, setMaterialUseAggregate] = useState("");
+  const [materialUseConstruction, setMaterialUseConstruction] = useState("Construction");
+  const [materialUseAggregate, setMaterialUseAggregate] = useState("Aggregate");
   const [
     materialUsePrimaryMaterialProduction,
     setMaterialUsePrimaryMaterialProduction,
@@ -276,15 +276,15 @@ const Building = (props) => {
   ///// handle water disposal
 
   const [waterDisposalConstruction, setWaterDisposalConstruction] = useState(
-    ""
+    "Construction"
   );
-  const [waterDisposalAggregate, setWaterDisposalAggregate] = useState("");
+  const [waterDisposalAggregate, setWaterDisposalAggregate] = useState("Aggregate");
   const [waterDisposalReUse, setWaterDisposalReUse] = useState("");
   const [waterDisposalUsage, setWaterDisposalUsage] = useState("");
   const [waterDisposalTonnes, setWaterDisposalTonnes] = useState("");
 
   const handleWaterDisposalConstruction = (eventKey) => {
-    setWaterDisposalAggregate(eventKey);
+    setWaterDisposalConstruction(eventKey);
   };
   const handleWaterDisposalAggregate = (eventKey) => {
     setWaterDisposalAggregate(eventKey);
@@ -325,7 +325,7 @@ const Building = (props) => {
     refrigrantKyotoProtocolStandard,
     setRefrigrantKyotoProtocolStandard,
   ] = useState("");
-  const [refrigrantCO2, setRefrigrantCO2] = useState("");
+  const [refrigrantCO2, setRefrigrantCO2] = useState("Carbon Dioxide");
   const [refrigrantUsage, setRefrigrantUsage] = useState("");
   const [refrigrantKg, setRefrigrantKg] = useState("");
 
@@ -492,6 +492,8 @@ const Building = (props) => {
                 handleElectricityFuelUsageCheck={
                   handleElectricityFuelUsageCheck
                 }
+                electricityGaseous={electricityGaseous}
+                electricityCNG={electricityCNG}
               />
             ) : bioenergy ? (
               <Bioenergy
@@ -500,11 +502,16 @@ const Building = (props) => {
                 handleBioEnergyFuelUsage={handleBioEnergyFuelUsage}
                 handleBioEnergyLiter={handleBioEnergyLiter}
                 handleBioEnergyCheck={handleBioEnergyCheck}
+                bioEnergyLiter={bioEnergyLiter}
+                bioEnergyBioFuel={bioEnergyBioFuel}
+                bioEnergyBioethanol={bioEnergyBioethanol}
               />
             ) : material ? (
               <MaterialUse
                 handleMaterialUseConstruction={handleMaterialUseConstruction}
                 handleMaterialUseAggregate={handleMaterialUseAggregate}
+                materialUseConstruction={materialUseConstruction}
+                materialUseAggregate={materialUseAggregate}
                 handleMaterialUsePrimaryMaterialProduction={
                   handleMaterialUsePrimaryMaterialProduction
                 }
@@ -528,6 +535,7 @@ const Building = (props) => {
                 handleRefrigrantCO2={handleRefrigrantCO2}
                 handleRefrigrantUsage={handleRefrigrantUsage}
                 handleRefrigrantKg={handleRefrigrantKg}
+                refrigrantCO2={refrigrantCO2}
               />
             ) : waterdisposal ? (
               <WaterDisposal
@@ -538,6 +546,8 @@ const Building = (props) => {
                 handleWaterDisposalReUse={handleWaterDisposalReUse}
                 handleWaterDisposalUsage={handleWaterDisposalUsage}
                 handleWaterDisposalTonnes={handleWaterDisposalTonnes}
+                waterDisposalAggregate={waterDisposalAggregate}
+                waterDisposalConstruction={waterDisposalConstruction}
               />
             ) : watersupply ? (
               <WaterSupply

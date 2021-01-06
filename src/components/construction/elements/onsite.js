@@ -15,7 +15,7 @@ const Onsite = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleGaseous}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Gaseous
+                {props.gaseous}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -37,7 +37,7 @@ const Onsite = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCNG}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                CNG
+                {props.CNG}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -93,9 +93,9 @@ const Onsite = (props) => {
             style={{ width: "30px", height: "30px" }}
           />
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

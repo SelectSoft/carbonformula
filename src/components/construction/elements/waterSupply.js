@@ -23,23 +23,23 @@ const WaterSupply = (props) => {
             />
           </div>
 
-          <Dropdown onSelect={props.handleWaterSupplyCubicMeters}>
+          <Dropdown style={{ marginTop: "21px" }} onSelect={props.handleWaterSupplyCubicMeters}>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               Cubic meters
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item eventKey="million litres">
-                million litres
+              <Dropdown.Item eventKey="Cubic meters">
+                Cubic meters
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 

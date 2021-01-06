@@ -130,30 +130,30 @@ const Events = (props) => {
   //////////////////////
   ////////////// handle car travel
 
-  const [carTravelVehicl, setCarTravel] = useState("");
-  const [carTravelType, setCarTravelType] = useState("");
+  const [carTravelVehicl, setCarTravel] = useState("Car");
+  const [carTravelType, setCarTravelType] = useState("Mini");
   const [carTravelDistance, setCarTravelDistance] = useState("");
   const [carTravelKm, setCarTravelKm] = useState("");
 
   const handleCarTravelVehicl = (eventKey) => {
-    setAirPlaneTravelPassenger(eventKey);
+    setCarTravel(eventKey);
   };
   const handleCarTravelType = (eventKey) => {
-    setAirPlaneTravelPassenger(eventKey);
+    setCarTravelType(eventKey);
   };
   const handleCarTravelDistance = (eventKey) => {
-    setAirPlaneTravelPassenger(eventKey);
+    setCarTravelDistance(eventKey);
   };
   const handleCarTravelKm = (eventKey) => {
-    setAirPlaneTravelPassenger(eventKey);
+    setCarTravelKm(eventKey);
   };
 
   /////////////////////////
 
   ////////////// handle electric car
 
-  const [electricCarVehicl, setElectricCarVehicl] = useState("");
-  const [electricCarType, setElectricCarType] = useState("");
+  const [electricCarVehicl, setElectricCarVehicl] = useState("Car");
+  const [electricCarType, setElectricCarType] = useState("Type");
   const [electricCarDistance, setElectricCarDistance] = useState("");
   const [electricCarKm, setElectricCarKm] = useState("");
 
@@ -278,6 +278,8 @@ const Events = (props) => {
                 handleCarTravelType={handleCarTravelType}
                 handleCarTravelDistance={handleCarTravelDistance}
                 handleCarTravelKm={handleCarTravelKm}
+                carTravelVehicl={carTravelVehicl}
+                carTravelType={carTravelType}
               />
             ) : electriccar ? (
               <Electriccar
@@ -285,6 +287,8 @@ const Events = (props) => {
                 handleElectricCarType={handleElectricCarType}
                 handleElectricCarDistance={handleElectricCarDistance}
                 handleElectricCarKm={handleElectricCarKm}
+                electricCarVehicl={electricCarVehicl}
+                electricCarType={electricCarType}
               />
             ) : null}
             <div className="container" style={{ width: "100%" }}>

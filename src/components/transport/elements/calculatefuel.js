@@ -16,7 +16,7 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelGaseous}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Gaseous
+                {props.calculatefuelGaseous}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="CNG">Liquid fuels</Dropdown.Item>
@@ -34,7 +34,7 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelCNG}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                CNG
+                {props.calculatefuelCNG}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="CNG">CNG</Dropdown.Item>
@@ -73,7 +73,7 @@ const Calculatefuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCalculatefuelTonnes}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Tonnes
+                {props.calculatefuelTonnes}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="litres">litres</Dropdown.Item>
@@ -88,9 +88,9 @@ const Calculatefuel = (props) => {
           </div>
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

@@ -16,7 +16,7 @@ const FreightPage = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleFreightVans}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Vans
+                {props.freightVans}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="hgv">HGV (all diesel)</Dropdown.Item>
@@ -36,7 +36,7 @@ const FreightPage = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleFreightClass}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Class 1(upto 1.305tonnes)
+                {props.freightClass}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="class2">
@@ -54,7 +54,7 @@ const FreightPage = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleFreightDiesel}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Diesel
+                {props.freightDiesel}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Petrol">Petrol</Dropdown.Item>
@@ -92,7 +92,7 @@ const FreightPage = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleFreightKm}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Tonnes
+                {props.freightKm}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Km">Km</Dropdown.Item>
@@ -113,9 +113,9 @@ const FreightPage = (props) => {
             onClick={props.handleFreightCheck}
           />
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

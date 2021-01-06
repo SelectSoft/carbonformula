@@ -54,9 +54,9 @@ const Ferry = (props) => {
           </div>
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

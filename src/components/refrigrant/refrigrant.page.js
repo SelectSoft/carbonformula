@@ -30,7 +30,7 @@ const Refrigrant = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleRefrigrantCO2}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Carbon dioxide
+                {props.refrigrantCO2}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Methane">Methane</Dropdown.Item>
@@ -131,9 +131,9 @@ const Refrigrant = (props) => {
                                 </div>   */}
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

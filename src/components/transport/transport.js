@@ -10,6 +10,7 @@ import Calculatefuel from "./elements/calculatefuel";
 import Air from "./elements/air";
 import Land from "./elements/land";
 import Sea from "./elements/sea";
+import { isElementOfType } from "react-dom/test-utils";
 
 const Construction = (props) => {
   const [air, setAir] = useState(false);
@@ -121,8 +122,8 @@ const Construction = (props) => {
   //////////////////////
   ////////////// handle car travel
 
-  const [carTravelVehicl, setCarTravel] = useState("");
-  const [carTravelType, setCarTravelType] = useState("");
+  const [carTravelVehicl, setCarTravel] = useState("Car");
+  const [carTravelType, setCarTravelType] = useState("Type");
   const [carTravelDistance, setCarTravelDistance] = useState("");
   const [carTravelKm, setCarTravelKm] = useState("");
 
@@ -143,8 +144,8 @@ const Construction = (props) => {
 
   ////////////// handle electric car
 
-  const [electricCarVehicl, setElectricCarVehicl] = useState("");
-  const [electricCarType, setElectricCarType] = useState("");
+  const [electricCarVehicl, setElectricCarVehicl] = useState("Car");
+  const [electricCarType, setElectricCarType] = useState("Type");
   const [electricCarDistance, setElectricCarDistance] = useState("");
   const [electricCarKm, setElectricCarKm] = useState("");
 
@@ -182,10 +183,10 @@ const Construction = (props) => {
 
   //////////// handle tranSPort and travel Seas
 
-  const [calculatefuelGaseous, setCalculatefuelGaseous] = useState("");
-  const [calculatefuelCNG, setCalculatefuelCNG] = useState("");
+  const [calculatefuelGaseous, setCalculatefuelGaseous] = useState("Gaseous");
+  const [calculatefuelCNG, setCalculatefuelCNG] = useState("CNG");
   const [calculatefuelQuantity, setCalculatefuelQuantity] = useState("");
-  const [calculatefuelTonnes, setCalculatefuelTonnes] = useState("");
+  const [calculatefuelTonnes, setCalculatefuelTonnes] = useState("Tonnes");
 
   const handleCalculatefuelGaseous = (eventKey) => {
     setCalculatefuelGaseous(eventKey);
@@ -311,6 +312,8 @@ const Construction = (props) => {
                 handleCarTravelType={handleCarTravelType}
                 handleCarTravelDistance={handleCarTravelDistance}
                 handleCarTravelKm={handleCarTravelKm}
+                carTravelVehicl={carTravelVehicl}
+                carTravelType={carTravelType}
               />
             ) : electriccar ? (
               <Electriccar
@@ -318,6 +321,8 @@ const Construction = (props) => {
                 handleElectricCarType={handleElectricCarType}
                 handleElectricCarDistance={handleElectricCarDistance}
                 handleElectricCarKm={handleElectricCarKm}
+                electricCarVehicl={electricCarVehicl}
+                electricCarType={electricCarType}
               />
             ) : calculatefuel ? (
               <Calculatefuel
@@ -325,6 +330,9 @@ const Construction = (props) => {
                 handleCalculatefuelCNG={handleCalculatefuelCNG}
                 handleCalculatefuelQuantity={handleCalculatefuelQuantity}
                 handleCalculatefuelTonnes={handleCalculatefuelTonnes}
+                calculatefuelGaseous={calculatefuelGaseous}
+                calculatefuelCNG={calculatefuelCNG}
+                calculatefuelTonnes={calculatefuelTonnes}
               />
             ) : sea ? (
               <Sea

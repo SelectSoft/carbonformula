@@ -20,7 +20,7 @@ const Hotelstay = (props) => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="roompernight">
-                  Room per Night
+                  {/* Room per Night */}UK
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

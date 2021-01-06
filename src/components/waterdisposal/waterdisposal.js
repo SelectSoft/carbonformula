@@ -17,7 +17,7 @@ const WaterDisposal = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleWaterDisposalConstruction}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Construction
+                {props.waterDisposalConstruction}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="refuse">Refuse</Dropdown.Item>
@@ -33,7 +33,7 @@ const WaterDisposal = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleWaterDisposalAggregate}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Aggregates
+                {props.waterDisposalAggregate}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Asbestos">Asbestos</Dropdown.Item>
@@ -94,9 +94,9 @@ const WaterDisposal = (props) => {
           </div>
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

@@ -63,9 +63,9 @@ const HeatnSteam = (props) => {
             <input type="checkbox" style={{ width: "30px", height: "30px" }} />
           </div>
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

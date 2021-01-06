@@ -21,7 +21,7 @@ const Fuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricityGaseous}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Gaseous
+                {props.electricityGaseous}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -35,7 +35,7 @@ const Fuel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleElectricityCNG}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                CNG
+                {props.electricityCNG}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -107,9 +107,9 @@ const Fuel = (props) => {
           <br />
           <input type="checkbox" style={{ width: "30px", height: "30px" }} />
         </div>
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another fuel
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

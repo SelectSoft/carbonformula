@@ -16,7 +16,7 @@ const Cartravel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCarTravelVehicl}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Car
+                {props.carTravelVehicl}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="bike">Notor bike</Dropdown.Item>
@@ -35,7 +35,7 @@ const Cartravel = (props) => {
           <div class="dropdown col-md-3" style={{ marginTop: "20px" }}>
             <Dropdown onSelect={props.handleCarTravelType}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Mini
+                {props.carTravelType}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Supermini">Supermini</Dropdown.Item>
@@ -79,15 +79,15 @@ const Cartravel = (props) => {
                 Km
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item eventKey="miles">Miles</Dropdown.Item>
+                <Dropdown.Item eventKey="KM">KM</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
         </div>
 
-        <button style={{ float: "right" }} class="btn btn-danger btn-md">
+        {/* <button style={{ float: "right" }} class="btn btn-danger btn-md">
           Add another
-        </button>
+        </button> */}
       </div>
     </React.Fragment>
   );

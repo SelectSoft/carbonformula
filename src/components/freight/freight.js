@@ -28,11 +28,11 @@ const Freight = (props) => {
 
   ////// handle Freight page
 
-  const [freightVans, setFreightVans] = useState("");
-  const [freightClass, setFreightClass] = useState("");
-  const [freightDiesel, setFreightDiesel] = useState("");
+  const [freightVans, setFreightVans] = useState("Vans");
+  const [freightClass, setFreightClass] = useState("Class 1(upto 1.305tonnes)");
+  const [freightDiesel, setFreightDiesel] = useState("Diesel");
   const [freightDistance, setFreightDistance] = useState("");
-  const [freightKm, setFreightKm] = useState("");
+  const [freightKm, setFreightKm] = useState("Tonnes");
   const [freightCheck, setFreightCheck] = useState("");
 
   const handleFreightVans = (eventKey) => {
@@ -125,6 +125,10 @@ const Freight = (props) => {
               handleFreightDistance={handleFreightDistance}
               handleFreightKm={handleFreightKm}
               handleFreightCheck={handleFreightCheck}
+              freightKm={freightKm}
+              freightDiesel={freightDiesel}
+              freightClass={freightClass}
+              freightVans={freightVans}
             />
             <div className="container" style={{ width: "100%" }}>
               <center>

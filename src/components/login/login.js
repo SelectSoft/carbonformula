@@ -79,6 +79,7 @@ const Login = (props) => {
                   value={email}
                   onChange={emailHandler}
                   placeholder="Enter your email"
+                  class="form-control form-control-lg"
                   style={{ width: "100%" }}
                 />
               </div>
@@ -112,8 +113,9 @@ const Login = (props) => {
                 </div>
                 <div class="col-md-3" style={{ marginTop: "28px" }}>
                   <input
-                    // value={}
+                    type="number"
                     onChange={numberHandler}
+                    class="form-control form-control-lg"
                     placeholder=""
                     style={{ width: "100%", height: "35px" }}
                     value={props.usage}

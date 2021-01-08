@@ -100,11 +100,13 @@ const Login = (props) => {
                 <div class="col-md-3" style={{ marginTop: "28px" }}>
                   <input
                     // value={}
+                    class="form-control form-control-lg"
+                    type="number"
                     onChange={numberHandler}
                     placeholder=""
                     style={{ width: "100%", height: "35px" }}
 
-                    // value={props.usage}
+                  // value={props.usage}
                   />
                 </div>
                 <div class="dropdown col-md-1" style={{ marginTop: "28px" }}>

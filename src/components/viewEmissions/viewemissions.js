@@ -1,27 +1,24 @@
 import React, { Component } from "react";
 import "reactjs-popup/dist/index.css";
-import { getMovies, getSites } from "./emissionsdata/fakeMovieService";
+import { fetchData } from "./emissionsdata/blocCarbonService";
 import { Modal, Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { GiClawSlashes } from "react-icons/gi";
 import classes from "../../style/building.module.css";
 class ViewEmissions extends Component {
-  state = {
-    movies: getMovies(),
-    title: "",
-    checkbox: false,
-    value: "",
-    isOpen: false,
-    // pageSize = 4
-  };
-  state1 = {
-    sites: getSites(),
-    title: "",
-    checkbox: false,
-    value: "",
-    isOpen: false,
-    // pageSize = 4
-  };
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.state = {
+      movies: null,
+      sites: null,
+      title: "",
+      checkbox: false,
+      value: "",
+      isOpen: false
+    };
+  }
+
   openModal = () => this.setState({ isOpen: true });
   closeModal = () => this.setState({ isOpen: false });
 
@@ -60,22 +57,26 @@ class ViewEmissions extends Component {
     this.setState({ movies });
     this.setState({ sites });
   };
-  handleLike = (movie) => {
-    console.log("Liked");
-    const movies = [...this.state.movies];
-    const index = movies.indexOf(movie);
-    movies[index] = { ...movies[index] };
-    movies[index].liked = !movies[index].liked;
-    this.setState({ movies });
-  };
-  handlePageChange = (page) => {
-    console.log(page);
-  };
-  titleHandler = (event) => {
-    console.log(event.target.value);
-  };
+
+  computeData = () => {
+    fetchData(this.props.endpoint, {}, (x) => {
+      const { movies, sites } = x; 
+      this.setState({ movies, sites });
+    });
+  }
+
+  componentWillMount() {
+    this.computeData();
+  }
+
   render() {
+    if(this.state.movies === null || this.state.sites === null) {
+      return (<span>Loading...</span>);
+    }
+
     const { length: count } = this.state.movies;
+    const { movies, sites } = this.state;
+    
     return (
       <React.Fragment>
         <br />
@@ -90,7 +91,7 @@ class ViewEmissions extends Component {
                     <span
                       style={{ border: "1px solid #ccc", padding: "8px 10px" }}
                     >
-                      3
+                      {movie.number}
                     </span>
                   </td>
                   <td className={classes.tabledata}>{movie.value}</td>
@@ -118,14 +119,14 @@ class ViewEmissions extends Component {
           <table className="table col-sm-12">
             <tbody style={{ textAlign: "left", fontSize: "20px" }}>
               <b style={{ fontSize: "20px" }}>Construction sites</b>
-              {this.state1.sites.map((site) => (
+              {this.state.sites.map((site) => (
                 <tr key={site.title}>
                   <td className={classes.tabledata}>{site.title}</td>
                   <td className={classes.tabledata}>
                     <span
                       style={{ border: "1px solid #ccc", padding: "8px 10px" }}
                     >
-                      3
+                      {site.number}
                     </span>
                   </td>
                   <td className={classes.tabledata}>{site.value}</td>

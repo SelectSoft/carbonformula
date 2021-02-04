@@ -20,7 +20,8 @@ import Travel from "./components/FamilyNextScreen/travel/travel";
 import Hotelstay from "./components/FamilyNextScreen/hotelstay/hotelstay";
 import { useState } from "react";
 
-function App() {
+function App({ endpoint }) {
+  console.log(`ACTIVE ENDPOINT: ${endpoint}`);
   const [toogle, setToogle] = useState(" ");
   const [back, setBack] = useState("");
   const [jsonObj, setJsonObj] = useState([]);
@@ -38,6 +39,7 @@ function App() {
   };
 
   const renderSwitch = () => {
+    console.log(toogle);
     switch (toogle) {
       case "/organisation/sign-in":
         return (
@@ -67,9 +69,9 @@ function App() {
           />
         );
       case "/view-emissions":
-        return <Title toogleHandler={toogleHandler} back={back} />;
+        return <Title toogleHandler={toogleHandler} back={back} endpoint={endpoint} />;
       case "/back-totalEmissions":
-        return <Title toogleHandler={toogleHandler} />;
+        return <Title toogleHandler={toogleHandler} endpoint={endpoint} />;
       case "/calculate-emissions":
         return <TotalEmissions toogleHandler={toogleHandler} />;
       case "/transport-and-travel":
@@ -146,14 +148,6 @@ function App() {
         <div className="auth-wrapper">
           <div className="auth-inner">
             {renderSwitch()}
-            {/* <Route exact path='/' component={Main} />
-            <Route path="/organisation/sign-in" component={Login} />
-            <Route path="/activity" component={Activity} />
-            <Route path="/family/add-activity" component={AddActivity}  />
-            <Route path="/building" component={Building} />  
-            <Route path="/building/:var" component={Building} />   
-            <Route path="/view-emissions" component={Title} />
-            <Route path="/calculate-emissions" component={TotalEmissions} />   */}
           </div>
         </div>
       </Router>

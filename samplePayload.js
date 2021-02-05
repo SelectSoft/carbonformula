@@ -89,9 +89,39 @@ const payload = {
             }
         },
         "Hotels": {
-            "hotelstay": {
+            "HotelStay": {
                 "country": "uk",
                 "nights": 5
+            },
+            "Air": {
+                "class": "economy",
+                "passengers": 1,
+                "return": true,
+                "distance": 5,
+                "unit": "km"
+            },
+            "Sea": {
+                "type": "foot",
+                "distance": 5,
+                "unit": "km"
+            },
+            "Land": {
+                "vehicle": "car",
+                "type": "mini",
+                "distance": 5,
+                "unit": "km"
+            },
+            "ElectricCar": {
+                "vehicle": "car",
+                "type": "mini",
+                "distance": 5,
+                "unit": "km"
+            },
+            "Fuel": {
+                "type": "gaseous",
+                "subtype": "cng",
+                "quantity": 5,
+                "unit": "tonnes"
             }
         },
         "Freight": {

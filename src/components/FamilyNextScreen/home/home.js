@@ -163,6 +163,7 @@ const Home = (props) => {
       props.jsonObjOfCalculator(data);
       console.log(data);
     }
+    alert("Data added");
   };
   return (
     <React.Fragment>

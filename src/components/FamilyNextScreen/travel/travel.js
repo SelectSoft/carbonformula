@@ -271,6 +271,7 @@ const Construction = (props) => {
       };
       console.log(data);
     }
+    alert("Data added");
   };
   //////////////////////
 

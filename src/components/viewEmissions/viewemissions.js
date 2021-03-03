@@ -10,12 +10,12 @@ class ViewEmissions extends Component {
     super(props);
     console.log(props);
     this.state = {
-      movies: null,
+      businessOperations: null,
       sites: null,
       title: "",
       checkbox: false,
       value: "",
-      isOpen: false
+      isOpen: false,
     };
   }
 
@@ -37,46 +37,48 @@ class ViewEmissions extends Component {
       var newArray = [];
       newArray.push(obj);
       console.log(newArray);
-      var abc = this.state.movies;
+      var abc = this.state.businessOperations;
       abc.push(obj);
       console.log(abc);
       this.setState({
-        movies: abc,
+        businessOperations: abc,
       });
 
       this.closeModal();
-      Swal.fire("Update Success!", "Movies Added To Stock", "success");
+      Swal.fire("Update Success!", "Business Operations Added", "success");
     } else {
       Swal.fire("Update Failed!", "Please put some values in fields", "error");
     } // alert('done')
   };
 
-  handleDelete = (movie, site) => {
-    const movies = this.state.movies.filter((m) => m._id !== movie._id);
+  handleDelete = (businessOperation, site) => {
+    const businessOperations = this.state.businessOperations.filter(
+      (m) => m._id !== businessOperation._id
+    );
     const sites = this.state.sites.filter((m) => m._id !== site._id);
-    this.setState({ movies });
+    this.setState({ businessOperations });
     this.setState({ sites });
   };
 
   computeData = () => {
     fetchData(this.props.endpoint, {}, (x) => {
-      const { movies, sites } = x; 
-      this.setState({ movies, sites });
+      const { businessOperations, sites } = x;
+      this.setState({ businessOperations, sites });
     });
-  }
+  };
 
   componentWillMount() {
     this.computeData();
   }
 
   render() {
-    if(this.state.movies === null || this.state.sites === null) {
-      return (<span>Loading...</span>);
+    if (this.state.businessOperations === null || this.state.sites === null) {
+      return <span>Loading...</span>;
     }
 
-    const { length: count } = this.state.movies;
-    const { movies, sites } = this.state;
-    
+    const { length: count } = this.state.businessOperations;
+    const { businessOperation, sites } = this.state;
+
     return (
       <React.Fragment>
         <br />
@@ -84,17 +86,21 @@ class ViewEmissions extends Component {
           <table className="table col-sm-12">
             <tbody style={{ textAlign: "left", fontSize: "20px" }}>
               <b style={{ fontSize: "20px" }}>Business Operations</b>
-              {this.state.movies.map((movie) => (
-                <tr key={movie.title}>
-                  <td className={classes.tabledata}>{movie.title}</td>
+              {this.state.businessOperations.map((businessOperation) => (
+                <tr key={businessOperation.title}>
+                  <td className={classes.tabledata}>
+                    {businessOperation.title}
+                  </td>
                   <td className={classes.tabledata}>
                     <span
                       style={{ border: "1px solid #ccc", padding: "8px 10px" }}
                     >
-                      {movie.number}
+                      {businessOperation.number}
                     </span>
                   </td>
-                  <td className={classes.tabledata}>{movie.value}</td>
+                  <td className={classes.tabledata}>
+                    {businessOperation.value}
+                  </td>
                   <td className={classes.tabledata}></td>
                   <td className={classes.tabledata}>
                     <button
@@ -107,7 +113,7 @@ class ViewEmissions extends Component {
                   <td className={classes.tabledata}>
                     <button
                       className="btn btn-danger btn-sm"
-                      onClick={() => this.handleDelete(movie)}
+                      onClick={() => this.handleDelete(businessOperation)}
                     >
                       Delete
                     </button>
@@ -161,7 +167,7 @@ class ViewEmissions extends Component {
             centered
           >
             <Modal.Header closeButton>
-              <Modal.Title>Add Movie To List</Modal.Title>
+              <Modal.Title>Add Business Operations To List</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form.Control
@@ -200,7 +206,7 @@ class ViewEmissions extends Component {
                 variant="secondary"
                 type="submit"
                 value="submit"
-                // onClick={ this.handle }
+                onClick={this.handle}
                 style={{ marginTop: "15px" }}
               >
                 Save Changes

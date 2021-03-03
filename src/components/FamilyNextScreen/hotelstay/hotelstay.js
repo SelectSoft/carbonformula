@@ -51,6 +51,7 @@ const Hotelstay = (props) => {
         hoteStayNoOfNights: hoteStayNoOfNights,
         hoteStayCheck: hoteStayCheck,
       };
+      alert("Data added");
       console.log(data);
     }
   };

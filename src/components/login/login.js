@@ -31,7 +31,11 @@ const Login = (props) => {
     setEmail(event.target.value);
   };
   const numberHandler = (event) => {
-    setNumebr(event.target.value);
+    if (event.target.value < 0) {
+      setNumebr(0);
+    } else {
+      setNumebr(event.target.value);
+    }
   };
   return (
     <React.Fragment>
@@ -114,11 +118,12 @@ const Login = (props) => {
                 <div class="col-md-3" style={{ marginTop: "28px" }}>
                   <input
                     type="number"
+                    value={number}
                     onChange={numberHandler}
                     class="form-control form-control-lg"
                     placeholder=""
                     style={{ width: "100%", height: "35px" }}
-                    value={props.usage}
+                    // value={props.usage}
                   />
                 </div>
                 <div class="dropdown col-md-1" style={{ marginTop: "28px" }}>

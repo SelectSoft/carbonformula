@@ -47,7 +47,7 @@ class ViewEmissions extends Component {
       Swal.fire("Update Success!", "Business Operations Added", "success");
     } else {
       Swal.fire("Update Failed!", "Please put some values in fields", "error");
-    } // alert('done')
+    }
   };
 
   handleDelete = (businessOperation, site) => {
